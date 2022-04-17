@@ -1,0 +1,48 @@
+/* ---------------------------- footer ---------------------------- */
+
+footer {
+  font: 600 10px/2 'Montserrat';
+  letter-spacing: 2px;
+  background-color: #464648;
+  color: #fff;
+  .footerTop {
+    padding: 20px;
+    text-align: center;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    p {
+      width: 33%;
+      height: 120px;
+      position: relative;
+      float: left;
+      padding: 30px 15px;
+      box-sizing: border-box;
+      &:nth-of-type(2) {
+        font: 20px/60px 'Homemade Apple';
+      }
+      &:last-of-type:after {
+        display: none;
+      }
+      &::after {
+        content: " ";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+.footerBottom {
+  background-color: #222;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}

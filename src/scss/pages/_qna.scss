@@ -1,0 +1,92 @@
+.qna_list {
+  li {
+    position: relative;
+    border: 1px solid $colorLightGray;
+    font-size: 1rem;
+    box-shadow: 5px 5px 5px rgba(#aaa, 0.6);
+    margin-bottom: 1em;
+    overflow: hidden;
+    a {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1em;
+      padding-left: calc(1em + 5px);
+    }
+    &:after {
+      content: '';
+      width: 150%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba($colorRed, 0.6);
+      transform: rotate(-45deg);
+      z-index: -1;
+    }
+  }
+}
+
+.qna_infos {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  .pic {
+    width: 60px;
+    height: 60px;
+    margin-right: 1em;
+    @include img;
+  }
+  .date {
+    font-size: .8rem;
+    color: $colorDarkGary;
+  }
+}
+
+.qna_icons {
+  margin-top: 0.5em;
+  .icon {
+    font-size: 14px;
+    color: $colorDarkGary;
+  }
+}
+
+.qna_cont {
+  width: 100%;
+  .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+    @include ellipsis;
+    margin-bottom: .51em;
+  }
+  .desc {
+    color: $colorDarkGary;
+    @include ellisisMulti;
+  }
+}
+
+@include mobile {
+  .qna_list {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: calc(50% - 10px);
+      margin-right: 20px;
+      margin-bottom: 20px;
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .qna_icons {
+    display: flex;
+    .icon {
+      margin-left: .5em;
+    }
+  }
+}

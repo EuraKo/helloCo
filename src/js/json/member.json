@@ -1,0 +1,88 @@
+{
+  "list": [{
+      "name": "HERSE HEDNAN",
+      "team": "ceo",
+      "teamName": "CEO",
+      "rank": "CEO",
+      "img": "man6.jpg"
+    },
+    {
+      "name": "PAULINA GAYOSO",
+      "team": "rnd",
+      "teamName": "R&D",
+      "rank": "CTO",
+      "img": "woman6.jpg"
+    },
+    {
+      "name": "TONY HUDSON",
+      "team": "rnd",
+      "teamName": "R&D",
+      "rank": "Manager",
+      "img": "man5.jpg"
+    },
+    {
+      "name": "CONOR MAYNARD",
+      "team": "rnd",
+      "teamName": "R&D",
+      "rank": "Leader",
+      "img": "man4.jpg"
+    },
+    {
+      "name": "HALSEY MYERS",
+      "team": "rnd",
+      "teamName": "R&D",
+      "rank": "Developer",
+      "img": "woman.jpg"
+    },
+    {
+      "name": "ALDEN MUNRO",
+      "team": "rnd",
+      "teamName": "R&D",
+      "rank": "Developer",
+      "img": "man9.jpg"
+    },
+    {
+      "name": "IVY KNIGHT",
+      "team": "design",
+      "teamName": "DESIGN",
+      "rank": "Manager",
+      "img": "woman9.jpg"
+    },
+    {
+      "name": "JARROD STACK",
+      "team": "design",
+      "teamName": "DESIGN",
+      "rank": "Leader",
+      "img": "man2.jpg"
+    },
+    {
+      "name": "ANIYAH RUIZ",
+      "team": "design",
+      "teamName": "DESIGN",
+      "rank": "Designer",
+      "img": "woman8.jpg"
+    },
+    {
+      "name": "TERRENCE NASH",
+      "team": "design",
+      "teamName": "DESIGN",
+      "rank": "Designer",
+      "img": "woman7.jpg"
+    },
+    {
+      "name": "DERRICK PRUITT",
+      "team": "design",
+      "teamName": "DESIGN",
+      "rank": "Designer",
+      "img": "man7.jpg"
+    },
+    {
+      "name": "RORY CARR",
+      "team": "design",
+      "teamName": "DESIGN",
+      "rank": "Designer",
+      "img": "man3.jpg"
+    }
+  ]
+
+}

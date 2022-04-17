@@ -1,0 +1,91 @@
+@mixin narrow {
+  @media (min-width: #{$breakpoint-narrow}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin miniTable {
+  @media (min-width: #{$breakpoint-miniTable}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-wide}) {
+    @content;
+  }
+}
+
+@mixin clear {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin inner {
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  @media screen and (min-width: 1200px) {
+    padding: 0;
+  }
+}
+
+@mixin btn($wid:100%) {
+  display: block;
+  width: $wid;
+  height: 30px;
+  font: 11px/30px "arial";
+  color: #eee;
+  border: 1px solid #bbb;
+  text-align: center;
+}
+
+@mixin h1($size:$fontTitle) {
+  font-size: $size;
+  font-family: $fontPoint;
+  line-height: 1;
+  font-weight: bold;
+}
+
+@mixin img($ht:100%, $fit:cover, $hidden:hidden, $transi:transform 500ms) {
+  overflow: $hidden;
+  img {
+    width: 100%;
+    height: $ht;
+    object-fit: cover;
+    object-position: center;
+    transition: $transi;
+  }
+}
+
+@mixin ellipsis ($wid:100%) {
+  width: $wid;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin ellisisMulti($wid:100%, $line:2) {
+  width: $wid;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

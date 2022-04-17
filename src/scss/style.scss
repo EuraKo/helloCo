@@ -1,0 +1,35 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/animation';
+@import 'base/reset';
+@import 'base/typography';
+@import 'components/_table';
+@import 'layout/head';
+@import 'layout/footer';
+@import 'pages/main';
+@import 'pages/members';
+@import 'pages/community';
+@import 'pages/qna';
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Homemade+Apple&family=Montserrat:wght@300;600&display=swap');
+.content {
+  width: 100%;
+  padding: 0 0 150px;
+}
+
+.inner {
+  @include inner;
+  // min-height: 500px;
+  h1 {
+    // margin-bottom: 60px;
+    span {
+      font: normal 2rem/1 '맑은 고딕';
+      color: #aaa;
+      &::before {
+        content: '/';
+        margin-right: 2rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
