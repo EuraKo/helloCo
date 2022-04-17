@@ -369,6 +369,11 @@
             border-right: 0;
           }
         }
+         :hover {
+          img {
+            transform: scale(1.05);
+          }
+        }
         .card_img_wrap {
           border: 1rem solid #fff;
           @include img;
