@@ -1,172 +1,31 @@
-/* ---------------------------- popular ---------------------------- */
-
-#popular {
-  padding: 3rem;
-  box-sizing: border-box;
-  background: url(../img/bg-3.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  .inner {
-    position: relative;
-    background: #fff;
-    padding: 3rem;
-    box-sizing: border-box;
-    &:after {
-      content: '';
-      display: block;
-      width: 20rem;
-      height: 20rem;
-      position: absolute;
-      bottom: -10rem;
-      right: -5rem;
-      z-index: 5;
-      background: url(../img/HC-Badge.png) no-repeat center/cover;
-    }
-    h1 {
-      font: 4.5rem/1 'Homemade Apple';
-      text-align: center;
-      padding: .8em 0;
-    }
-    .wrap {
-      article {
-        width: 100%;
-        // height: 570px;
-        position: relative;
-        margin-bottom: 3rem;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-position: center;
-        &::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: rgba(255, 255, 255, 0.3);
-          opacity: 0;
-          transition: .5s;
-        }
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-        &:hover {
-          animation: bgSizeAni 1s alternate;
-          &::after {
-            opacity: 1;
-          }
-          .pic {
-            img {
-              transform: scale(1.1);
-            }
-          }
-          p {
-            color: #d6e9e5;
-          }
-          h2 {
-            color: #dfb15b;
-          }
-        }
-        .pic {
-          @include img;
-        }
-        .cont {
-          width: 80%;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          z-index: 10;
-          transform: translate(-50%, -50%);
-          background-color: rgba(255, 255, 255, 0.9);
-          outline: 1px solid #fff;
-          outline-offset: 5px;
-          padding: 3.2rem 2.4rem;
-          box-sizing: border-box;
-          text-align: center;
-          p {
-            font: 600 1.2rem/1 'Montserrat';
-            color: #dfb15b;
-            margin-bottom: 1.5rem;
-            transition: color .5s
-          }
-          h2 {
-            font: 2.2rem/1.5 'Cinzel Decorative';
-            transition: color .5s
-          }
-        }
-      }
-    }
-  }
-}
-
-
-/* ---------------------------- weeks ---------------------------- */
-
-#weeks {
-  background-color: #fff;
-  padding: 0 3rem 8rem;
-  box-sizing: border-box;
-  .inner {
-    @include inner;
-  }
-  h1 {
+  /* ---------------------------- main common ----------------------------  */
+  /*  회전제목 */
+  
+  .rotate_tit {
+    font: 3rem/1 'Homemade Apple';
+    width: 0;
+    height: 0;
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: 1em;
     z-index: 2;
-    font: 3rem/1 'Homemade Apple';
+    white-space: nowrap;
     transform: rotate(90deg);
     transform-origin: left top;
     &:after {
       content: "";
-      display: block;
-      width: 200px;
+      display: inline-block;
+      width: 15rem;
       height: 1px;
-      position: absolute;
-      right: -200px;
-      top: 50%;
+      vertical-align: middle;
+      margin-left: 2rem;
       background-color: #222;
     }
   }
-  .wrap {
-    .cardImgBox {
-      position: relative;
-      &::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-color: #f6ebe4;
-        position: absolute;
-        left: -2rem;
-        top: 2rem;
-      }
-      .cardImg {
-        font-size: 0;
-        width: 100%;
-        height: 100%;
-        position: relative;
-        box-shadow: 2px 2px 14px 0px rgb(0, 0, 0, .2);
-        overflow: hidden;
-        &:hover {
-          img {
-            transform: scale(1.1);
-          }
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          z-index: 1;
-          object-fit: cover;
-          transition: 1s;
-        }
-      }
-    }
-  }
+  /* 컨텐츠 영역 */
+  
   .content {
     padding: 0;
-    box-sizing: border-box;
     h2 {
       font: 3rem/1 'Cinzel Decorative';
       margin-top: 2em;
@@ -183,251 +42,592 @@
       text-align: center;
     }
   }
-}
-
-
-/* banner */
-
-.banner {
-  width: 100%;
-  position: relative;
-  margin-top: 3rem;
-  .banner_inner {
+  /* 버튼 */
+  
+  .btn_wrap {
+    width: 100%;
     display: flex;
-    overflow-x: auto;
-    a {
+    justify-content: center;
+  }
+  
+  .btn_more {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    font: 2rem/1 'Montserrat';
+    &::after {
+      content: " ";
       display: block;
-      width: 11.5rem;
-      height: 11.5rem;
-      flex: 0 0 11.5rem;
-      padding: 2rem;
-      box-sizing: border-box;
-      border: 1px solid transparent;
+      width: 100%;
+      height: 2rem;
+      position: relative;
+      top: -.5em;
+      left: .7em;
+      background-color: #cde4de;
       transition: .5s;
-      &::hover {
-        border-color: #dfb15b;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    }
+    &:hover {
+      &::after {
+        background-color: #e6e7e1;
       }
     }
-  }
-  .banner_prev,
-  .banner_next {
-    width: 3rem;
-    height: 3rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    border: 3px solid $colorBk;
-  }
-  .banner_prev {
-    left: -1.5rem;
-  }
-  .banner_next {
-    right: -1.5rem;
-  }
-}
-
-
-/* ---------------------------- rolling_banner ---------------------------- */
-
-#rolling_banner {
-  background-color: #f3f3f3;
-  padding: 25px 15px;
-  box-sizing: border-box;
-  ul {
-    &::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-    li {
-      width: 20%;
-      float: left;
-    }
-    a {
-      display: block;
-      padding: 20px;
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
+    span {
+      position: relative;
+      z-index: 1;
     }
   }
-}
-
-
-/* ---------------------------- book ---------------------------- */
-
-#book {
-  background: url(../img/bg-4.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  .inner {
-    padding: 80px 0;
+  /* ---------------------------- popular ---------------------------- */
+  
+  #popular {
+    padding: 3rem;
     box-sizing: border-box;
-    &::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-  }
-  .box {
-    width: 50%;
-    float: right;
-    padding: 20px;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.9);
-    outline: 1px solid #fff;
-    outline-offset: 5px;
-    &::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-    img {
-      width: 225px;
-      float: left;
-    }
-    .content {
-      width: calc(100% - 225px);
-      float: left;
-      padding-left: 40px;
-      padding-top: 20px;
+    background: url(../img/bg-3.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+    .inner {
+      position: relative;
+      background: #fff;
+      padding: 3rem;
       box-sizing: border-box;
-      text-align: center;
-      h2 {
-        font: 30px/1 'Homemade Apple';
-        margin-bottom: 20px;
+      &:after {
+        content: '';
+        display: block;
+        width: 20rem;
+        height: 20rem;
+        position: absolute;
+        bottom: -10rem;
+        right: -5rem;
+        z-index: 5;
+        background: url(../img/HC-Badge.png) no-repeat center/cover;
       }
-      p {
-        font: 20px/1.5 'Montserrat';
-        margin-bottom: 20px;
+      h1 {
+        font: 3rem/1 'Homemade Apple';
+        text-align: center;
+        padding: .8em 0;
       }
-    }
-  }
-  input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    background: transparent;
-    border: 1px solid #aaa;
-    margin-bottom: 10px;
-  }
-  .subBtn {
-    width: 100%;
-    height: 37px;
-    background: $colorBk;
-    line-height: 37px;
-    color: #fff;
-    border: 1px solid $colorBk;
-  }
-}
-
-@include mobile {
-  #popular .inner {
-    &::after {
-      bottom: 3rem;
-      right: 3rem;
-    }
-    h1 {
-      font-size: 3.6rem;
-    }
-    .wrap {
-      display: flex;
-      flex-wrap: wrap;
-      article {
-        width: calc(50% - 1rem);
-        margin-right: 2rem;
-        &:nth-of-type(2n) {
-          margin-right: 0;
-        }
-        .cont {
-          h2 {
-            font-size: 1.6rem;
+      .wrap {
+        article {
+          width: 100%;
+          // height: 570px;
+          position: relative;
+          margin-bottom: 3rem;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-position: center;
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            transition: .5s;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          &:hover {
+            animation: bgSizeAni 1s alternate;
+            &::after {
+              opacity: 1;
+            }
+            .pic {
+              img {
+                transform: scale(1.1);
+              }
+            }
+            p {
+              color: #d6e9e5;
+            }
+            h2 {
+              color: #dfb15b;
+            }
+          }
+          .pic {
+            @include img;
+          }
+          .cont {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            outline: 1px solid #fff;
+            outline-offset: 5px;
+            padding: 3.2rem 2.4rem;
+            box-sizing: border-box;
+            text-align: center;
+            p {
+              font: 600 1.2rem/1 'Montserrat';
+              color: #dfb15b;
+              margin-bottom: 1.5rem;
+              transition: color .5s
+            }
+            h2 {
+              font: 2.2rem/1.5 'Cinzel Decorative';
+              transition: color .5s
+            }
           }
         }
       }
     }
   }
-  #weeks {
-    h1 {
-      left: 2em;
-    }
-    .wrap {
-      width: 80%;
-      margin: 0 auto;
-      .cardImgBox {
-        &::before {
-          left: -4em;
-          top: 4em;
-        }
-      }
-    }
-  }
-}
-
-@include miniTable {
-  #weeks {
-    h1 {
-      font-size: 3.6rem;
-      left: 3rem;
-    }
+  /* ---------------------------- weeks ---------------------------- */
+  
+  #weeks,
+  #recipes {
+    background-color: #fff;
+    padding: 3rem 3rem 8rem;
+    box-sizing: border-box;
     .inner {
-      height: 100%;
-      padding-top: 3rem;
+      @include inner;
+      position: relative;
     }
     .wrap {
-      width: 100%;
-      display: flex;
-      align-items: flex-start;
       .cardImgBox {
-        max-width: 550px;
-        flex: 0 0 50%;
-        padding-left: 3rem;
+        position: relative;
         &::before {
-          width: calc(100% - 3rem);
-          left: 0;
-          top: 3rem;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 2rem;
         }
         .cardImg {
-          height: auto;
+          font-size: 0;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          box-shadow: 2px 2px 14px 0px rgb(0, 0, 0, .2);
+          overflow: hidden;
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            object-fit: cover;
+            transition: 1s;
+          }
         }
       }
     }
-    .content {
-      padding: 2rem 2rem 2rem 4rem;
-      h2 {
-        margin-top: 0;
+  }
+  
+  #weeks {
+    .wrap .cardImgBox {
+      &::before {
+        left: -2rem;
+        background-color: #f6ebe4;
       }
     }
   }
-}
-
-@include tablet {
-  #popular {
-    padding: 6rem;
+  
+  #recipes {
+    .rotate_tit {
+      right: -3rem;
+    }
+    .wrap .cardImgBox {
+      &::before {
+        right: -2rem;
+        background-color: #e0e1da;
+      }
+    }
+  }
+  /* banner */
+  
+  .banner {
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+    padding: 0 1.5rem;
+    .banner_inner {
+      overflow-x: auto;
+      .banner_cont {
+        // width: 11.5rem *5;
+        display: flex;
+        a {
+          display: block;
+          width: 11.5rem;
+          height: 11.5rem;
+          flex: 0 0 11.5rem;
+          padding: 2rem;
+          box-sizing: border-box;
+          border: 1px solid transparent;
+          transition: .5s;
+          &::hover {
+            border-color: #dfb15b;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    .banner_prev,
+    .banner_next {
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 3px solid $colorBk;
+      background-color: rgba($colorWh, 0.6);
+    }
+    .banner_prev {
+      left: 0;
+    }
+    .banner_next {
+      right: 0;
+    }
+  }
+  
+  #need {
+    padding: 4rem 0;
+    background-color: $bgGary;
     .inner {
-      &::after {
-        bottom: -10rem;
-        right: -10rem;
+      @include inner;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  /* ---------------------------- rolling_banner ---------------------------- */
+  
+  #rolling_banner {
+    background-color: #f3f3f3;
+    .inner {
+      @include inner(0);
+    }
+    .swiper {
+      .swiper-slide {
+        width: 20%;
+        float: left;
       }
-      h1 {
-        text-align: left;
+      a {
+        display: block;
+        padding: 20px;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
       }
-      .wrap article {
-        width: calc(100% / 3 - 1.4rem);
-        margin-bottom: 0;
-        &:nth-of-type(2n) {
-          margin-right: 2rem;
+    }
+  }
+  /* ---------------------------- meet ---------------------------- */
+  
+  #meet {
+    padding: 3rem;
+    background: url(../img/bg-2.jpg) no-repeat center/cover;
+    .inner {
+      @include inner;
+      background-color: #fff;
+      padding: 3rem;
+    }
+    .cardImgBox {
+      display: flex;
+      position: relative;
+      .cardImg {
+        width: 50%;
+        position: relative;
+        &:first-of-type {
+          margin-right: 3rem;
+          margin-top: 3rem;
+          z-index: 1;
+          &::before {
+            content: '';
+            display: block;
+            width: calc(100% + 4rem);
+            height: calc(100% - 2rem);
+            position: absolute;
+            bottom: -1rem;
+            left: -1rem;
+            z-index: -1;
+            background-color: #f6ebe4;
+          }
+          .card_img_wrap {
+            margin-right: -5rem;
+          }
         }
         &:last-of-type {
-          margin-right: 0;
+          margin-left: 3rem;
+          .card_img_wrap {
+            margin-left: -5rem;
+            border-right: 0;
+          }
+        }
+        .card_img_wrap {
+          border: 1rem solid #fff;
+          @include img;
         }
       }
     }
   }
-}
+  /* ---------------------------- book ---------------------------- */
+  
+  #book {
+    background: url(../img/bg-4.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+    .inner {
+      padding: 80px 0;
+      box-sizing: border-box;
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+    .box {
+      width: 50%;
+      float: right;
+      padding: 20px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.9);
+      outline: 1px solid #fff;
+      outline-offset: 5px;
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      img {
+        width: 225px;
+        float: left;
+      }
+      .content {
+        width: calc(100% - 225px);
+        float: left;
+        padding-left: 40px;
+        padding-top: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        h2 {
+          font: 30px/1 'Homemade Apple';
+          margin-bottom: 20px;
+        }
+        p {
+          font: 20px/1.5 'Montserrat';
+          margin-bottom: 20px;
+        }
+      }
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      background: transparent;
+      border: 1px solid #aaa;
+      margin-bottom: 10px;
+    }
+    .subBtn {
+      width: 100%;
+      height: 37px;
+      background: $colorBk;
+      line-height: 37px;
+      color: #fff;
+      border: 1px solid $colorBk;
+    }
+  }
+  
+  @include mobile {
+    #popular .inner {
+      &::after {
+        bottom: 3rem;
+        right: 3rem;
+      }
+      h1 {
+        font-size: 3.6rem;
+      }
+      .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        article {
+          width: calc(50% - 1rem);
+          margin-right: 2rem;
+          &:nth-of-type(2n) {
+            margin-right: 0;
+          }
+          .cont {
+            h2 {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+    #weeks {
+      .wrap {
+        width: 80%;
+        margin: 0 auto;
+        .cardImgBox {
+          &::before {
+            left: -4em;
+            top: 4em;
+          }
+        }
+      }
+    }
+    #recipes {
+      .wrap {
+        width: 80%;
+        margin: 0 auto;
+        .cardImgBox {
+          &::before {
+            right: -4em;
+            top: 4em;
+          }
+        }
+      }
+    }
+  }
+  
+  @include miniTable {
+    .rotate_tit {
+      font-size: 3.6rem;
+    }
+    .btn_more {
+      font-size: 2.4rem;
+    }
+    #weeks,
+    #recipes {
+      .inner {
+        height: 100%;
+        padding-top: 3rem;
+      }
+      .wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .cardImgBox {
+          max-width: 550px;
+          flex: 0 0 50%;
+          &::before {
+            width: calc(100% - 3rem);
+          }
+          .cardImg {
+            height: auto;
+          }
+        }
+      }
+      .content {
+        width: 50%;
+        padding: 2rem;
+        h2 {
+          margin-top: 0;
+        }
+      }
+    }
+    #weeks {
+      .wrap {
+        .cardImgBox {
+          padding-left: 3rem;
+          &::before {
+            left: 0;
+            top: 3rem;
+          }
+        }
+      }
+      .content {
+        padding-left: 4rem;
+      }
+    }
+    #recipes {
+      .rotate_tit {
+        right: 0;
+      }
+      .wrap {
+        flex-direction: row-reverse;
+        .cardImgBox {
+          padding-right: 3rem;
+          &::before {
+            right: 0;
+          }
+        }
+      }
+      .content {
+        padding-right: 4rem;
+      }
+    }
+    .banner .banner_inner .banner_cont a {
+      width: 13rem;
+      height: 13rem;
+      flex: 0 0 13rem;
+    }
+    #meet {
+      .wrap {
+        display: flex;
+        align-items: flex-start;
+      }
+      .cardImgBox {
+        width: 60%;
+        padding-left: 3rem;
+        .cardImg {
+          &:first-of-type {
+            &::before {
+              bottom: -2rem;
+              left: -2rem;
+            }
+          }
+        }
+      }
+      .content {
+        width: 40%;
+        padding-left: 4rem;
+        h2 {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  
+  @include tablet {
+    .rotate_tit {
+      font-size: 4.6rem;
+    }
+    #popular {
+      padding: 6rem;
+      .inner {
+        &::after {
+          bottom: -10rem;
+          right: -10rem;
+        }
+        h1 {
+          font-size: 4.6rem;
+        }
+        .rotate_tit {
+          text-align: left;
+        }
+        .wrap article {
+          width: calc(100% / 3 - 1.4rem);
+          margin-bottom: 0;
+          &:nth-of-type(2n) {
+            margin-right: 2rem;
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    #meet {
+      .cardImgBox .cardImg:first-of-type {
+        margin-top: 5rem;
+      }
+      .inner {
+        padding: 6rem 3rem 12rem;
+      }
+    }
+  }

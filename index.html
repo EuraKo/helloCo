@@ -5,9 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello & Co – An Everything Theme by Hello You Designs</title>
+  <!-- plug in -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <!-- style -->
   <link rel="stylesheet" href="src/css/style.css">
   <script src="https://kit.fontawesome.com/4037ebe563.js" crossorigin="anonymous"></script>
+  <!-- plug in -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- script -->
   <script defer src="src/js/header.js"></script>
+  <script defer src="src/js/main.js"></script>
 </head>
 
 <body>
@@ -35,7 +42,7 @@
                 <a href="#">HOME</a>
               </li>
               <li>
-                <a href="#">ABOUT</a>
+                <a href="members.html">MEMBERS</a>
               </li>
               <li>
                 <a href="#">TEMPLATES</a>
@@ -98,9 +105,9 @@
   <!-- section - weeks -->
   <section id="weeks">
     <div class="inner">
-      <h1>This weeks #1</h1>
       <div class="wrap">
         <div class="cardImgBox">
+          <h1 class="rotate_tit">This weeks #1</h1>
           <div class="cardImg">
             <img src="src/img/HC-post-4.jpg" alt="무화과 팬케이크">
           </div>
@@ -113,19 +120,72 @@
           <p>You could also skip highlighting a post or page and use this for an about section, with a short blurb and a link to your about page.</p>
           <div class="banner">
             <div class="banner_inner">
-              <a href="#">
-                <img src="src/img/martha-stewart-collection-honey-pot-wand-created-for-macys.jpg" alt="">
-              </a>
-              <a href="#"><img src="src/img/noritake-sonnet-in-blue-salad-plate-white-blue.jpg" alt=""></a>
-              <a href="#">
-                <img src="src/img/uncommon-james-by-kristin-cavallari-uncommon-james-set-of-4-copper-white-measuring-spoons.jpg" alt="">
-              </a>
-              <a href="#">
-                <img src="src/img/swedish-grace-tea-pot-snow-iittala-white.jpg" alt="">
-              </a>
-              <a href="#">
-                <img src="src/img/jardins-du-monde-coffee-mug-white-juliska.jpg" alt="">
-              </a>
+              <div class="banner_cont">
+                <a href="#">
+                  <img src="src/img/martha-stewart-collection-honey-pot-wand-created-for-macys.jpg" alt="">
+                </a>
+                <a href="#"><img src="src/img/noritake-sonnet-in-blue-salad-plate-white-blue.jpg" alt=""></a>
+                <a href="#">
+                  <img src="src/img/uncommon-james-by-kristin-cavallari-uncommon-james-set-of-4-copper-white-measuring-spoons.jpg" alt="">
+                </a>
+                <a href="#">
+                  <img src="src/img/swedish-grace-tea-pot-snow-iittala-white.jpg" alt="">
+                </a>
+                <a href="#">
+                  <img src="src/img/jardins-du-monde-coffee-mug-white-juliska.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            <button class="banner_prev">&lt;<span class="hidden">왼쪽으로 이동</span></button>
+            <button class="banner_next">&gt;<span class="hidden">오른쪽으로 이동</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section - need -->
+  <section id="need">
+    <div class="inner">
+      <figure>
+        <img src="src/img/HC-Ad-Space.jpg" alt="need ad space? use this for ad space, a cta, option, or even an affiliate widge">
+      </figure>
+    </div>
+  </section>
+  <!-- section - recipes -->
+  <section id="recipes">
+    <div class="inner">
+      <div class="wrap">
+        <div class="cardImgBox">
+          <h1 class="rotate_tit">Top Recipes</h1>
+          <div class="cardImg">
+            <img src="src/img/HC-FP2-683x1024.jpg" alt="무화과 팬케이크">
+          </div>
+        </div>
+
+        <div class="content">
+          <h2>The Top Post or Category</h2>
+          <p>Use this spot to highlight your top posts, categories, or even pages. You can customize what wording is here, or use the default post excerpt.</p>
+          <p>You could also skip highlighting a post or page and use this for an about section, with a short blurb and a link to your about page.</p>
+          <div class="banner">
+            <div class="banner_inner">
+              <div class="banner_cont">
+                <a href="#">
+                  <img src="src/img/abc-home-bronze-walnut-spoon-set.jpg" alt="">
+                </a>
+                <a href="#"><img src="src/img/dora-maar-teapot.jpg" alt=""></a>
+                <a href="#">
+                  <img src="src/img/ercuis-tea-strainer-ercuis-tea-strainer.jpg" alt="">
+                </a>
+                <a href="#">
+                  <img src="src/img/rivington-porcelain-bread-butter-plate.jpg" alt="">
+                </a>
+                <a href="#">
+                  <img src="src/img/mikasa-dinnerware-antique-white-covered-butter-dish.jpg" alt="">
+                </a>
+                <a href="#">
+                  <img src="src/img/belcourt-tea-cup-saucer.jpg" alt="">
+                </a>
+              </div>
             </div>
             <button class="banner_prev">&lt;<span class="hidden">왼쪽으로 이동</span></button>
             <button class="banner_next">&gt;<span class="hidden">오른쪽으로 이동</span></button>
@@ -137,27 +197,67 @@
   <!-- section - rolling_banner -->
   <section id="rolling_banner">
     <div class="inner">
-      <ul>
-        <li>
-          <a href="#"><img src="src/img/Hello-Chic-logo-300x300-1.png" alt=""></a>
-        </li>
-        <li>
-          <a href="#"><img src="src/img/helloyoulogo-300x300-1.png" alt=""></a>
-        </li>
-        <li>
-          <a href="#"><img src="src/img/kimilogo-300x300-1.png" alt=""></a>
-        </li>
-        <li>
-          <a href="#"><img src="src/img/Mainstreetlogo-300x300-1.png" alt=""></a>
-        </li>
-        <li>
-          <a href="#"><img src="src/img/HelloBeaches-Logo-300x300-1.png" alt=""></a>
-        </li>
-      </ul>
+
+      <div class="swiper rollingSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#"><img src="src/img/Hello-Chic-logo-300x300-1.png" alt=""></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="src/img/helloyoulogo-300x300-1.png" alt=""></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="src/img/kimilogo-300x300-1.png" alt=""></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="src/img/Mainstreetlogo-300x300-1.png" alt=""></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="src/img/HelloBeaches-Logo-300x300-1.png" alt=""></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="src/img/christinecapone-300x300-1.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section -  Meet -->
+  <section id="meet">
+    <div class="inner">
+      <div class="wrap">
+        <div class="cardImgBox">
+          <h1 class="rotate_tit">Meet The Chef</h1>
+          <div class="cardImg">
+            <div class="card_img_wrap">
+              <img src="src/img/HC-About-1-768x1151.jpg" alt="도시락 이미지">
+
+            </div>
+          </div>
+          <div class="cardImg">
+            <div class="card_img_wrap">
+              <img src="src/img/HC-About-2.jpg" alt="도시락 이미지">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <h2>I’M JENNIFER</h2>
+          <p class="point">I JUST DON’T WANT TO LOOK BACK AND THINK, “I COULD’VE EATEN THAT.”</p>
+          <p>This is a great spot to tell your readers more about you and what you do. The 2 images to the left can hold a slider, single image, or even a featured page widget.</p>
+          <p>Throughout this demo all of the colors can be changed to your own brand colors, as well as the background images.</p>
+          <div class="btn_wrap">
+            <a href="#" class="btn_more"><span>LEARN MORE</span></a>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
   <!-- section - book -->
-  <section id="book">
+  <!--   <section id="book">
     <div class="inner">
       <div class="box">
         <img src="src/img/HC-Book-1.png" alt="desserts book">
@@ -169,8 +269,8 @@
         </div>
       </div>
     </div>
-  </section>
-  <footer>
+  </section> -->
+  <!--  <footer>
     <div class="footerTop">
       <div class="inner">
         <p>MOBILE RESPONSIVE · GUTENBERG READY · DETAILED SETUP INSTRUCTIONS</p>
@@ -182,8 +282,7 @@
     <div class="footerBottom">
       COPYRIGHT © 2022 · HELLO & CO · HELLO YOU DESIGNS
     </div>
-
-  </footer>
+  </footer> -->
 </body>
 
 </html>
