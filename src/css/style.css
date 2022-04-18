@@ -577,19 +577,22 @@ footer .footerTop p::after {
 }
 
 /* ---------------------------- popular ---------------------------- */
-#popular {
+#popular,
+#favorite {
   padding: 3rem;
   box-sizing: border-box;
   background: url(../img/bg-3.jpg) no-repeat center/cover;
   background-attachment: fixed;
 }
-#popular .inner {
+#popular .inner,
+#favorite .inner {
   position: relative;
   background: #fff;
   padding: 3rem;
   box-sizing: border-box;
 }
-#popular .inner:after {
+#popular .inner:after,
+#favorite .inner:after {
   content: "";
   display: block;
   width: 20rem;
@@ -600,12 +603,14 @@ footer .footerTop p::after {
   z-index: 5;
   background: url(../img/HC-Badge.png) no-repeat center/cover;
 }
-#popular .inner h1 {
+#popular .inner h1,
+#favorite .inner h1 {
   font: 3rem/1 "Homemade Apple";
   text-align: center;
   padding: 0.8em 0;
 }
-#popular .inner .wrap article {
+#popular .inner .wrap article,
+#favorite .inner .wrap article {
   width: 100%;
   position: relative;
   margin-bottom: 3rem;
@@ -613,7 +618,8 @@ footer .footerTop p::after {
   background-size: 100% 100%;
   background-position: center;
 }
-#popular .inner .wrap article::after {
+#popular .inner .wrap article::after,
+#favorite .inner .wrap article::after {
   content: "";
   display: block;
   width: 100%;
@@ -625,36 +631,45 @@ footer .footerTop p::after {
   opacity: 0;
   transition: 0.5s;
 }
-#popular .inner .wrap article:last-of-type {
+#popular .inner .wrap article:last-of-type,
+#favorite .inner .wrap article:last-of-type {
   margin-bottom: 0;
 }
-#popular .inner .wrap article:hover {
+#popular .inner .wrap article:hover,
+#favorite .inner .wrap article:hover {
   animation: bgSizeAni 1s alternate;
 }
-#popular .inner .wrap article:hover::after {
+#popular .inner .wrap article:hover::after,
+#favorite .inner .wrap article:hover::after {
   opacity: 1;
 }
-#popular .inner .wrap article:hover .pic img {
+#popular .inner .wrap article:hover .pic img,
+#favorite .inner .wrap article:hover .pic img {
   transform: scale(1.1);
 }
-#popular .inner .wrap article:hover p {
+#popular .inner .wrap article:hover p,
+#favorite .inner .wrap article:hover p {
   color: #d6e9e5;
 }
-#popular .inner .wrap article:hover h2 {
+#popular .inner .wrap article:hover h2,
+#favorite .inner .wrap article:hover h2 {
   color: #dfb15b;
 }
-#popular .inner .wrap article .pic {
+#popular .inner .wrap article .pic,
+#favorite .inner .wrap article .pic {
   overflow: hidden;
   font-size: 0;
 }
-#popular .inner .wrap article .pic img {
+#popular .inner .wrap article .pic img,
+#favorite .inner .wrap article .pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   transition: transform 500ms;
 }
-#popular .inner .wrap article .cont {
+#popular .inner .wrap article .cont,
+#favorite .inner .wrap article .cont {
   width: 80%;
   position: absolute;
   top: 50%;
@@ -668,13 +683,15 @@ footer .footerTop p::after {
   box-sizing: border-box;
   text-align: center;
 }
-#popular .inner .wrap article .cont p {
+#popular .inner .wrap article .cont p,
+#favorite .inner .wrap article .cont p {
   font: 600 1.2rem/1 "Montserrat";
   color: #dfb15b;
   margin-bottom: 1.5rem;
   transition: color 0.5s;
 }
-#popular .inner .wrap article .cont h2 {
+#popular .inner .wrap article .cont h2,
+#favorite .inner .wrap article .cont h2 {
   font: 2.2rem/1.5 "Cinzel Decorative";
   transition: color 0.5s;
 }
@@ -807,22 +824,26 @@ footer .footerTop p::after {
   right: 0;
 }
 
-#need {
+.slogan {
   padding: 4rem 0;
   background-color: #eee;
 }
-#need .inner {
+.slogan .inner {
   width: 1180px;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 3rem;
 }
 @media screen and (min-width: 1200px) {
-  #need .inner {
+  .slogan .inner {
     padding: 0;
   }
 }
-#need img {
+.slogan figure {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.slogan figure img {
   width: 100%;
   object-fit: cover;
 }
@@ -951,6 +972,18 @@ footer .footerTop p::after {
 #dessert .inner_box .inner_cont p {
   font-family: "Cinzel Decorative";
   line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+/* ---------------------------- favorite ---------------------------- */
+#favorite {
+  background: #fff;
+}
+#favorite .inner::after {
+  display: none;
+}
+#favorite .btn_wrap {
+  margin-top: 3rem;
 }
 
 /* ---------------------------- book ---------------------------- */
@@ -1019,33 +1052,41 @@ footer .footerTop p::after {
 }
 
 @media (min-width: 640px) {
-  #popular .inner::after {
+  #popular .inner::after,
+#favorite .inner::after {
     bottom: 3rem;
     right: 3rem;
   }
-  #popular .inner h1 {
+  #popular .inner h1,
+#favorite .inner h1 {
     font-size: 3.6rem;
   }
-  #popular .inner .wrap {
+  #popular .inner .wrap,
+#favorite .inner .wrap {
     display: flex;
     flex-wrap: wrap;
   }
-  #popular .inner .wrap article {
+  #popular .inner .wrap article,
+#favorite .inner .wrap article {
     width: calc(50% - 1rem);
     margin-right: 2rem;
   }
-  #popular .inner .wrap article:nth-of-type(2n) {
+  #popular .inner .wrap article:nth-of-type(2n),
+#favorite .inner .wrap article:nth-of-type(2n) {
     margin-right: 0;
   }
-  #popular .inner .wrap article .cont h2 {
+  #popular .inner .wrap article .cont h2,
+#favorite .inner .wrap article .cont h2 {
     font-size: 1.6rem;
   }
 
-  #weeks .wrap {
+  #weeks .wrap,
+#dessert .wrap {
     width: 80%;
     margin: 0 auto;
   }
-  #weeks .wrap .cardImgBox::before {
+  #weeks .wrap .cardImgBox::before,
+#dessert .wrap .cardImgBox::before {
     left: -4em;
     top: 4em;
   }
@@ -1161,33 +1202,51 @@ footer .footerTop p::after {
   #meet .content h2 {
     margin-top: 0;
   }
+
+  #dessert .content {
+    padding-left: 4rem;
+  }
+  #dessert .inner_box .pic {
+    width: 50%;
+  }
 }
 @media (min-width: 1200px) {
+  .btn_normal {
+    font-size: 2rem;
+  }
+
   .rotate_tit {
     font-size: 4.6rem;
   }
 
-  #popular {
+  #popular,
+#favorite {
     padding: 6rem;
   }
-  #popular .inner::after {
+  #popular .inner::after,
+#favorite .inner::after {
     bottom: -10rem;
     right: -10rem;
   }
-  #popular .inner h1 {
+  #popular .inner h1,
+#favorite .inner h1 {
     font-size: 4.6rem;
   }
-  #popular .inner .rotate_tit {
+  #popular .inner .rotate_tit,
+#favorite .inner .rotate_tit {
     text-align: left;
   }
-  #popular .inner .wrap article {
+  #popular .inner .wrap article,
+#favorite .inner .wrap article {
     width: calc(33.3333333333% - 1.4rem);
     margin-bottom: 0;
   }
-  #popular .inner .wrap article:nth-of-type(2n) {
+  #popular .inner .wrap article:nth-of-type(2n),
+#favorite .inner .wrap article:nth-of-type(2n) {
     margin-right: 2rem;
   }
-  #popular .inner .wrap article:last-of-type {
+  #popular .inner .wrap article:last-of-type,
+#favorite .inner .wrap article:last-of-type {
     margin-right: 0;
   }
 
@@ -1196,6 +1255,18 @@ footer .footerTop p::after {
   }
   #meet .inner {
     padding: 6rem 3rem 12rem;
+  }
+
+  #dessert .inner_box {
+    display: flex;
+    align-items: center;
+  }
+  #dessert .inner_box .inner_cont h3 {
+    font-size: 3rem;
+  }
+  #dessert .inner_box .inner_cont P {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
   }
 }
 .members {

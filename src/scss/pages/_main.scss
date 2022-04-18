@@ -90,7 +90,8 @@
   }
   /* ---------------------------- popular ---------------------------- */
   
-  #popular {
+  #popular,
+  #favorite {
     padding: 3rem;
     box-sizing: border-box;
     background: url(../img/bg-3.jpg) no-repeat center/cover;
@@ -308,15 +309,19 @@
     }
   }
   
-  #need {
+  .slogan {
     padding: 4rem 0;
     background-color: $bgGary;
     .inner {
       @include inner;
     }
-    img {
-      width: 100%;
-      object-fit: cover;
+    figure {
+      max-width: 1000px;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
   /* ---------------------------- rolling_banner ---------------------------- */
@@ -415,8 +420,22 @@
         p {
           font-family: "Cinzel Decorative";
           line-height: 1.5;
+          margin-bottom: 1em;
         }
       }
+    }
+  }
+  /* ---------------------------- favorite ---------------------------- */
+  
+  #favorite {
+    background: #fff;
+    .inner {
+      &::after {
+        display: none;
+      }
+    }
+    .btn_wrap {
+      margin-top: 3rem;
     }
   }
   /* ---------------------------- book ---------------------------- */
@@ -486,32 +505,36 @@
   }
   
   @include mobile {
-    #popular .inner {
-      &::after {
-        bottom: 3rem;
-        right: 3rem;
-      }
-      h1 {
-        font-size: 3.6rem;
-      }
-      .wrap {
-        display: flex;
-        flex-wrap: wrap;
-        article {
-          width: calc(50% - 1rem);
-          margin-right: 2rem;
-          &:nth-of-type(2n) {
-            margin-right: 0;
-          }
-          .cont {
-            h2 {
-              font-size: 1.6rem;
+    #popular,
+    #favorite {
+      .inner {
+        &::after {
+          bottom: 3rem;
+          right: 3rem;
+        }
+        h1 {
+          font-size: 3.6rem;
+        }
+        .wrap {
+          display: flex;
+          flex-wrap: wrap;
+          article {
+            width: calc(50% - 1rem);
+            margin-right: 2rem;
+            &:nth-of-type(2n) {
+              margin-right: 0;
+            }
+            .cont {
+              h2 {
+                font-size: 1.6rem;
+              }
             }
           }
         }
       }
     }
-    #weeks {
+    #weeks,
+    #dessert {
       .wrap {
         width: 80%;
         margin: 0 auto;
@@ -635,13 +658,27 @@
         }
       }
     }
+    #dessert {
+      .content {
+        padding-left: 4rem;
+      }
+      .inner_box {
+        .pic {
+          width: 50%;
+        }
+      }
+    }
   }
   
   @include tablet {
+    .btn_normal {
+      font-size: 2rem;
+    }
     .rotate_tit {
       font-size: 4.6rem;
     }
-    #popular {
+    #popular,
+    #favorite {
       padding: 6rem;
       .inner {
         &::after {
@@ -672,6 +709,22 @@
       }
       .inner {
         padding: 6rem 3rem 12rem;
+      }
+    }
+    #dessert {
+      .inner_box {
+        display: flex;
+        align-items: center;
+        .inner_cont {
+          h3 {
+            font-size: 3rem;
+          }
+          P {
+            font-size: 2.4rem;
+            letter-spacing: 1px;
+          }
+          ;
+        }
       }
     }
   }
