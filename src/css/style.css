@@ -564,6 +564,18 @@ footer .footerTop p::after {
   z-index: 1;
 }
 
+.btn_normal {
+  font-size: 1.6rem;
+  display: inline-block;
+  padding: 0.3em 1em;
+  background-color: #333;
+  font-family: "Montserrat";
+  color: #fff;
+}
+.btn_normal:hover {
+  background: #dfb15b;
+}
+
 /* ---------------------------- popular ---------------------------- */
 #popular {
   padding: 3rem;
@@ -669,13 +681,15 @@ footer .footerTop p::after {
 
 /* ---------------------------- weeks ---------------------------- */
 #weeks,
-#recipes {
+#recipes,
+#dessert {
   background-color: #fff;
   padding: 3rem 3rem 8rem;
   box-sizing: border-box;
 }
 #weeks .inner,
-#recipes .inner {
+#recipes .inner,
+#dessert .inner {
   width: 1180px;
   max-width: 100%;
   margin: 0 auto;
@@ -684,16 +698,19 @@ footer .footerTop p::after {
 }
 @media screen and (min-width: 1200px) {
   #weeks .inner,
-#recipes .inner {
+#recipes .inner,
+#dessert .inner {
     padding: 0;
   }
 }
 #weeks .wrap .cardImgBox,
-#recipes .wrap .cardImgBox {
+#recipes .wrap .cardImgBox,
+#dessert .wrap .cardImgBox {
   position: relative;
 }
 #weeks .wrap .cardImgBox::before,
-#recipes .wrap .cardImgBox::before {
+#recipes .wrap .cardImgBox::before,
+#dessert .wrap .cardImgBox::before {
   content: "";
   display: block;
   width: 100%;
@@ -702,7 +719,8 @@ footer .footerTop p::after {
   top: 2rem;
 }
 #weeks .wrap .cardImgBox .cardImg,
-#recipes .wrap .cardImgBox .cardImg {
+#recipes .wrap .cardImgBox .cardImg,
+#dessert .wrap .cardImgBox .cardImg {
   font-size: 0;
   width: 100%;
   height: 100%;
@@ -711,11 +729,13 @@ footer .footerTop p::after {
   overflow: hidden;
 }
 #weeks .wrap .cardImgBox .cardImg:hover img,
-#recipes .wrap .cardImgBox .cardImg:hover img {
+#recipes .wrap .cardImgBox .cardImg:hover img,
+#dessert .wrap .cardImgBox .cardImg:hover img {
   transform: scale(1.1);
 }
 #weeks .wrap .cardImgBox .cardImg img,
-#recipes .wrap .cardImgBox .cardImg img {
+#recipes .wrap .cardImgBox .cardImg img,
+#dessert .wrap .cardImgBox .cardImg img {
   width: 100%;
   height: 100%;
   position: relative;
@@ -724,7 +744,8 @@ footer .footerTop p::after {
   transition: 1s;
 }
 
-#weeks .wrap .cardImgBox::before {
+#weeks .wrap .cardImgBox::before,
+#dessert .wrap .cardImgBox::before {
   left: -2rem;
   background-color: #f6ebe4;
 }
@@ -902,6 +923,36 @@ footer .footerTop p::after {
   transition: transform 500ms;
 }
 
+/* ---------------------------- dessert ---------------------------- */
+#dessert .inner_box {
+  background-color: #f4efe1;
+  padding: 1.5rem 1.5rem 3rem;
+  margin-bottom: 3rem;
+}
+#dessert .inner_box .pic {
+  overflow: hidden;
+  font-size: 0;
+}
+#dessert .inner_box .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms;
+}
+#dessert .inner_box .inner_cont {
+  text-align: center;
+}
+#dessert .inner_box .inner_cont h3 {
+  font-size: 2.3rem;
+  margin-bottom: 0.5em;
+  font-family: "Homemade Apple";
+}
+#dessert .inner_box .inner_cont p {
+  font-family: "Cinzel Decorative";
+  line-height: 1.5;
+}
+
 /* ---------------------------- book ---------------------------- */
 #book {
   background: url(../img/bg-4.jpg) no-repeat center/cover;
@@ -1018,36 +1069,43 @@ footer .footerTop p::after {
   }
 
   #weeks .inner,
-#recipes .inner {
+#recipes .inner,
+#dessert .inner {
     height: 100%;
     padding-top: 3rem;
   }
   #weeks .wrap,
-#recipes .wrap {
+#recipes .wrap,
+#dessert .wrap {
     width: 100%;
     display: flex;
     align-items: center;
   }
   #weeks .wrap .cardImgBox,
-#recipes .wrap .cardImgBox {
+#recipes .wrap .cardImgBox,
+#dessert .wrap .cardImgBox {
     max-width: 550px;
     flex: 0 0 50%;
   }
   #weeks .wrap .cardImgBox::before,
-#recipes .wrap .cardImgBox::before {
+#recipes .wrap .cardImgBox::before,
+#dessert .wrap .cardImgBox::before {
     width: calc(100% - 3rem);
   }
   #weeks .wrap .cardImgBox .cardImg,
-#recipes .wrap .cardImgBox .cardImg {
+#recipes .wrap .cardImgBox .cardImg,
+#dessert .wrap .cardImgBox .cardImg {
     height: auto;
   }
   #weeks .content,
-#recipes .content {
+#recipes .content,
+#dessert .content {
     width: 50%;
     padding: 2rem;
   }
   #weeks .content h2,
-#recipes .content h2 {
+#recipes .content h2,
+#dessert .content h2 {
     margin-top: 0;
   }
 

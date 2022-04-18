@@ -76,6 +76,18 @@
       z-index: 1;
     }
   }
+  
+  .btn_normal {
+    font-size: 1.6rem;
+    display: inline-block;
+    padding: .3em 1em;
+    background-color: $colorBk;
+    font-family: "Montserrat";
+    color: #fff;
+    &:hover {
+      background: $colorYellow;
+    }
+  }
   /* ---------------------------- popular ---------------------------- */
   
   #popular {
@@ -179,7 +191,8 @@
   /* ---------------------------- weeks ---------------------------- */
   
   #weeks,
-  #recipes {
+  #recipes,
+  #dessert {
     background-color: #fff;
     padding: 3rem 3rem 8rem;
     box-sizing: border-box;
@@ -223,7 +236,8 @@
     }
   }
   
-  #weeks {
+  #weeks,
+  #dessert {
     .wrap .cardImgBox {
       &::before {
         left: -2rem;
@@ -381,6 +395,30 @@
       }
     }
   }
+  /* ---------------------------- dessert ---------------------------- */
+  
+  #dessert {
+    .inner_box {
+      background-color: #f4efe1;
+      padding: 1.5rem 1.5rem 3rem;
+      margin-bottom: 3rem;
+      .pic {
+        @include img;
+      }
+      .inner_cont {
+        text-align: center;
+        h3 {
+          font-size: 2.3rem;
+          margin-bottom: .5em;
+          font-family: "Homemade Apple";
+        }
+        p {
+          font-family: "Cinzel Decorative";
+          line-height: 1.5;
+        }
+      }
+    }
+  }
   /* ---------------------------- book ---------------------------- */
   
   #book {
@@ -507,7 +545,8 @@
       font-size: 2.4rem;
     }
     #weeks,
-    #recipes {
+    #recipes,
+    #dessert {
       .inner {
         height: 100%;
         padding-top: 3rem;
