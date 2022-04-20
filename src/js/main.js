@@ -19,5 +19,4 @@ var swiper = new Swiper(".rollingSwiper", {
       spaceBetween: 50,
     },
   },
-
 });

@@ -2,7 +2,7 @@
   /*  회전제목 */
   
   .rotate_tit {
-    font: 3rem/1 'Homemade Apple';
+    font: 3rem/1 $fontPoint;
     width: 0;
     height: 0;
     display: inline-block;
@@ -27,17 +27,17 @@
   .content {
     padding: 0;
     h2 {
-      font: 3rem/1 'Cinzel Decorative';
+      font: 3rem/1 $fontPoint-2;
       margin-top: 2em;
       margin-bottom: .5em;
       text-align: center;
     }
     p {
-      font: 1.6rem/2 'Montserrat';
+      font: 1.6rem/2 $fontDefault;
       margin-bottom: 2em;
     }
     .point {
-      font: 2rem/2 'Cinzel Decorative';
+      font: 2rem/2 $fontPoint-2;
       color: #dfb15b;
       text-align: center;
     }
@@ -54,7 +54,7 @@
     display: inline-block;
     margin: 0 auto;
     position: relative;
-    font: 2rem/1 'Montserrat';
+    font: 2rem/1 $fontDefault;
     &::after {
       content: " ";
       display: block;
@@ -113,7 +113,7 @@
         background: url(../img/HC-Badge.png) no-repeat center/cover;
       }
       h1 {
-        font: 3rem/1 'Homemade Apple';
+        font: 3rem/1 $fontPoint;
         text-align: center;
         padding: .8em 0;
       }
@@ -175,13 +175,13 @@
             box-sizing: border-box;
             text-align: center;
             p {
-              font: 600 1.2rem/1 'Montserrat';
+              font: 600 1.2rem/1 $fontDefault;
               color: #dfb15b;
               margin-bottom: 1.5rem;
               transition: color .5s
             }
             h2 {
-              font: 2.2rem/1.5 'Cinzel Decorative';
+              font: 2.2rem/1.5 $fontPoint-2;
               transition: color .5s
             }
           }
@@ -270,6 +270,9 @@
       .banner_cont {
         // width: 11.5rem *5;
         display: flex;
+        position: relative;
+        top: 0;
+        left: 0;
         a {
           display: block;
           width: 11.5rem;
@@ -297,15 +300,43 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      border-radius: 50%;
-      border: 3px solid $colorBk;
+      border-top: 1px solid $colorBk;
+      border-bottom: 1px solid $colorBk;
       background-color: rgba($colorWh, 0.6);
+      &::after {
+        content: '';
+        display: block;
+        width: 20%;
+        height: 20%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        border-top: 1px solid $colorBk;
+        border-left: 1px solid $colorBk;
+        transition: .3s;
+      }
     }
     .banner_prev {
       left: 0;
+      &:hover {
+        &::after {
+          // left: 0%;
+          animation: arrowBtnPrev .5s infinite alternate;
+        }
+      }
     }
     .banner_next {
       right: 0;
+      &::after {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+      &:hover {
+        &::after {
+          left: 100%;
+          animation: arrowBtnNext .5s infinite alternate;
+        }
+      }
     }
   }
   
@@ -438,50 +469,68 @@
       margin-top: 3rem;
     }
   }
+  /* ---------------------------- youtube ---------------------------- */
+  
+  #youtube {
+    background: url(../img/bg-3.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+    padding: 3rem;
+    .inner {
+      @include inner;
+      padding: 3rem;
+      background: #fff;
+    }
+    h1 {
+      font: 3rem/1 $fontPoint;
+      margin-bottom: .2em;
+      padding-top: 0.8em;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        padding: .1rem;
+        a {
+          display: block;
+          @include img;
+        }
+      }
+    }
+  }
   /* ---------------------------- book ---------------------------- */
   
   #book {
     background: url(../img/bg-4.jpg) no-repeat center/cover;
     background-attachment: fixed;
     .inner {
-      padding: 80px 0;
-      box-sizing: border-box;
-      &::after {
-        content: "";
-        display: block;
-        clear: both;
-      }
+      @include inner;
+      display: flex;
+      justify-content: flex-end;
+      padding: 3rem;
     }
     .box {
-      width: 50%;
-      float: right;
-      padding: 20px;
-      box-sizing: border-box;
+      width: 100%;
+      padding: 3rem;
+      padding-top: 1em;
       background: rgba(255, 255, 255, 0.9);
       outline: 1px solid #fff;
       outline-offset: 5px;
-      &::after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-      img {
-        width: 225px;
-        float: left;
+      .map {
+        width: 100%;
+        img {
+          width: 100%;
+        }
       }
       .content {
-        width: calc(100% - 225px);
-        float: left;
-        padding-left: 40px;
-        padding-top: 20px;
-        box-sizing: border-box;
         text-align: center;
         h2 {
-          font: 30px/1 'Homemade Apple';
+          font: 3rem/1 $fontPoint;
           margin-bottom: 20px;
+          margin-top: .5em;
         }
         p {
-          font: 20px/1.5 'Montserrat';
+          font: 20px/1.5 $fontDefault;
           margin-bottom: 20px;
         }
       }
@@ -555,6 +604,14 @@
             right: -4em;
             top: 4em;
           }
+        }
+      }
+    }
+    #youtube {
+      ul {
+        li {
+          width: 33.3333%;
+          padding: .2rem;
         }
       }
     }
@@ -668,6 +725,14 @@
         }
       }
     }
+    #book {
+      .box {
+        width: 50%;
+        min-width: 580px;
+        display: flex;
+        align-items: center;
+      }
+    }
   }
   
   @include tablet {
@@ -726,5 +791,22 @@
           ;
         }
       }
+    }
+    #youtube {
+      .inner {
+        padding: 3rem;
+        h1 {
+          font-size: 4.6rem;
+        }
+      }
+      ul {
+        li {
+          width: 25%;
+          padding: .2rem;
+        }
+      }
+    }
+    #book {
+      padding: 12rem;
     }
   }

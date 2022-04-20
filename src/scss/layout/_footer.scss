@@ -1,27 +1,18 @@
 /* ---------------------------- footer ---------------------------- */
 
 footer {
-  font: 600 10px/2 'Montserrat';
+  font: 600 10px/1.5 $fontDefault;
   letter-spacing: 2px;
   background-color: #464648;
   color: #fff;
   .footerTop {
-    padding: 20px;
     text-align: center;
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
     p {
-      width: 33%;
-      height: 120px;
       position: relative;
-      float: left;
       padding: 30px 15px;
       box-sizing: border-box;
       &:nth-of-type(2) {
-        font: 20px/60px 'Homemade Apple';
+        font: 20px/1.2 $fontPoint;
       }
       &:last-of-type:after {
         display: none;
@@ -29,12 +20,12 @@ footer {
       &::after {
         content: " ";
         display: block;
-        width: 1px;
-        height: 100%;
+        width: 100%;
+        height: 1px;
         background: #fff;
         position: absolute;
         right: 0;
-        top: 0;
+        bottom: 0;
       }
     }
   }
@@ -45,4 +36,27 @@ footer {
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
+}
+
+@include mobile {
+  footer {
+    .inner {
+      display: flex;
+      padding: 2em 0;
+    }
+    .footerTop {
+      p {
+        width: 33.33%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::after {
+          width: 1px;
+          height: 100%;
+        }
+      }
+    }
+  }
 }

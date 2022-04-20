@@ -8,6 +8,22 @@
     background-size: 105% 105%;
   }
 }
+@keyframes arrowBtnPrev {
+  0% {
+    left: 30%;
+  }
+  100% {
+    left: 70%;
+  }
+}
+@keyframes arrowBtnNext {
+  0% {
+    left: 70%;
+  }
+  100% {
+    left: 30%;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -48,7 +64,7 @@ body {
 */
 h1,
 h2 {
-  font-family: "Montserrat";
+  font-family: "Montserrat", serif;
   font-weight: 500;
 }
 
@@ -442,30 +458,21 @@ header .logo a img {
 }
 /* ---------------------------- footer ---------------------------- */
 footer {
-  font: 600 10px/2 "Montserrat";
+  font: 600 10px/1.5 "Montserrat", serif;
   letter-spacing: 2px;
   background-color: #464648;
   color: #fff;
 }
 footer .footerTop {
-  padding: 20px;
   text-align: center;
 }
-footer .footerTop:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 footer .footerTop p {
-  width: 33%;
-  height: 120px;
   position: relative;
-  float: left;
   padding: 30px 15px;
   box-sizing: border-box;
 }
 footer .footerTop p:nth-of-type(2) {
-  font: 20px/60px "Homemade Apple";
+  font: 20px/1.2 "Homemade Apple", sans-serif;
 }
 footer .footerTop p:last-of-type:after {
   display: none;
@@ -473,12 +480,12 @@ footer .footerTop p:last-of-type:after {
 footer .footerTop p::after {
   content: " ";
   display: block;
-  width: 1px;
-  height: 100%;
+  width: 100%;
+  height: 1px;
   background: #fff;
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
 }
 
 .footerBottom {
@@ -488,10 +495,28 @@ footer .footerTop p::after {
   text-align: center;
 }
 
+@media (min-width: 640px) {
+  footer .inner {
+    display: flex;
+    padding: 2em 0;
+  }
+  footer .footerTop p {
+    width: 33.33%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .footerTop p::after {
+    width: 1px;
+    height: 100%;
+  }
+}
 /* ---------------------------- main common ----------------------------  */
 /*  회전제목 */
 .rotate_tit {
-  font: 3rem/1 "Homemade Apple";
+  font: 3rem/1 "Homemade Apple", sans-serif;
   width: 0;
   height: 0;
   display: inline-block;
@@ -517,17 +542,17 @@ footer .footerTop p::after {
   padding: 0;
 }
 .content h2 {
-  font: 3rem/1 "Cinzel Decorative";
+  font: 3rem/1 "Cinzel Decorative", sans-serif;
   margin-top: 2em;
   margin-bottom: 0.5em;
   text-align: center;
 }
 .content p {
-  font: 1.6rem/2 "Montserrat";
+  font: 1.6rem/2 "Montserrat", serif;
   margin-bottom: 2em;
 }
 .content .point {
-  font: 2rem/2 "Cinzel Decorative";
+  font: 2rem/2 "Cinzel Decorative", sans-serif;
   color: #dfb15b;
   text-align: center;
 }
@@ -543,7 +568,7 @@ footer .footerTop p::after {
   display: inline-block;
   margin: 0 auto;
   position: relative;
-  font: 2rem/1 "Montserrat";
+  font: 2rem/1 "Montserrat", serif;
 }
 .btn_more::after {
   content: " ";
@@ -605,7 +630,7 @@ footer .footerTop p::after {
 }
 #popular .inner h1,
 #favorite .inner h1 {
-  font: 3rem/1 "Homemade Apple";
+  font: 3rem/1 "Homemade Apple", sans-serif;
   text-align: center;
   padding: 0.8em 0;
 }
@@ -685,14 +710,14 @@ footer .footerTop p::after {
 }
 #popular .inner .wrap article .cont p,
 #favorite .inner .wrap article .cont p {
-  font: 600 1.2rem/1 "Montserrat";
+  font: 600 1.2rem/1 "Montserrat", serif;
   color: #dfb15b;
   margin-bottom: 1.5rem;
   transition: color 0.5s;
 }
 #popular .inner .wrap article .cont h2,
 #favorite .inner .wrap article .cont h2 {
-  font: 2.2rem/1.5 "Cinzel Decorative";
+  font: 2.2rem/1.5 "Cinzel Decorative", sans-serif;
   transition: color 0.5s;
 }
 
@@ -787,6 +812,9 @@ footer .footerTop p::after {
 }
 .banner .banner_inner .banner_cont {
   display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .banner .banner_inner .banner_cont a {
   display: block;
@@ -813,15 +841,39 @@ footer .footerTop p::after {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 50%;
-  border: 3px solid #333;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
   background-color: rgba(255, 255, 255, 0.6);
+}
+.banner .banner_prev::after,
+.banner .banner_next::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
+  transition: 0.3s;
 }
 .banner .banner_prev {
   left: 0;
 }
+.banner .banner_prev:hover::after {
+  animation: arrowBtnPrev 0.5s infinite alternate;
+}
 .banner .banner_next {
   right: 0;
+}
+.banner .banner_next::after {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.banner .banner_next:hover::after {
+  left: 100%;
+  animation: arrowBtnNext 0.5s infinite alternate;
 }
 
 .slogan {
@@ -986,52 +1038,94 @@ footer .footerTop p::after {
   margin-top: 3rem;
 }
 
+/* ---------------------------- youtube ---------------------------- */
+#youtube {
+  background: url(../img/bg-3.jpg) no-repeat center/cover;
+  background-attachment: fixed;
+  padding: 3rem;
+}
+#youtube .inner {
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  padding: 3rem;
+  background: #fff;
+}
+@media screen and (min-width: 1200px) {
+  #youtube .inner {
+    padding: 0;
+  }
+}
+#youtube h1 {
+  font: 3rem/1 "Homemade Apple", sans-serif;
+  margin-bottom: 0.2em;
+  padding-top: 0.8em;
+}
+#youtube ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#youtube ul li {
+  width: 50%;
+  padding: 0.1rem;
+}
+#youtube ul li a {
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+}
+#youtube ul li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms;
+}
+
 /* ---------------------------- book ---------------------------- */
 #book {
   background: url(../img/bg-4.jpg) no-repeat center/cover;
   background-attachment: fixed;
 }
 #book .inner {
-  padding: 80px 0;
-  box-sizing: border-box;
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem;
 }
-#book .inner::after {
-  content: "";
-  display: block;
-  clear: both;
+@media screen and (min-width: 1200px) {
+  #book .inner {
+    padding: 0;
+  }
 }
 #book .box {
-  width: 50%;
-  float: right;
-  padding: 20px;
-  box-sizing: border-box;
+  width: 100%;
+  padding: 3rem;
+  padding-top: 1em;
   background: rgba(255, 255, 255, 0.9);
   outline: 1px solid #fff;
   outline-offset: 5px;
 }
-#book .box::after {
-  content: "";
-  display: block;
-  clear: both;
+#book .box .map {
+  width: 100%;
 }
-#book .box img {
-  width: 225px;
-  float: left;
+#book .box .map img {
+  width: 100%;
 }
 #book .box .content {
-  width: calc(100% - 225px);
-  float: left;
-  padding-left: 40px;
-  padding-top: 20px;
-  box-sizing: border-box;
   text-align: center;
 }
 #book .box .content h2 {
-  font: 30px/1 "Homemade Apple";
+  font: 3rem/1 "Homemade Apple", sans-serif;
   margin-bottom: 20px;
+  margin-top: 0.5em;
 }
 #book .box .content p {
-  font: 20px/1.5 "Montserrat";
+  font: 20px/1.5 "Montserrat", serif;
   margin-bottom: 20px;
 }
 #book input {
@@ -1098,6 +1192,11 @@ footer .footerTop p::after {
   #recipes .wrap .cardImgBox::before {
     right: -4em;
     top: 4em;
+  }
+
+  #youtube ul li {
+    width: 33.3333%;
+    padding: 0.2rem;
   }
 }
 @media (min-width: 840px) {
@@ -1209,6 +1308,13 @@ footer .footerTop p::after {
   #dessert .inner_box .pic {
     width: 50%;
   }
+
+  #book .box {
+    width: 50%;
+    min-width: 580px;
+    display: flex;
+    align-items: center;
+  }
 }
 @media (min-width: 1200px) {
   .btn_normal {
@@ -1267,6 +1373,21 @@ footer .footerTop p::after {
   #dessert .inner_box .inner_cont P {
     font-size: 2.4rem;
     letter-spacing: 1px;
+  }
+
+  #youtube .inner {
+    padding: 3rem;
+  }
+  #youtube .inner h1 {
+    font-size: 4.6rem;
+  }
+  #youtube ul li {
+    width: 25%;
+    padding: 0.2rem;
+  }
+
+  #book {
+    padding: 12rem;
   }
 }
 .members {

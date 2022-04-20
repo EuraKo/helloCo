@@ -6,3 +6,21 @@
     background-size: 105% 105%;
   }
 }
+
+@keyframes arrowBtnPrev {
+  0% {
+    left: 30%;
+  }
+  100% {
+    left: 70%;
+  }
+}
+
+@keyframes arrowBtnNext {
+  0% {
+    left: 70%;
+  }
+  100% {
+    left: 30%;
+  }
+}
