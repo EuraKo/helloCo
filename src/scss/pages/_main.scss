@@ -46,7 +46,7 @@ section h1 {
   }
   .point {
     font: 2rem/2 $fontPoint-2;
-    color: #dfb15b;
+    color: $fontColor;
     text-align: center;
   }
 }
@@ -136,7 +136,7 @@ section h1 {
           font-size: 3rem;
           font-family: $fontPoint-2;
           text-transform: uppercase;
-          color: #8e4a15;
+          color: $fontColor-brown;
           margin-bottom: 1rem;
         }
         p {
@@ -153,14 +153,14 @@ section h1 {
         display: block;
         width: 50%;
         height: 50%;
-        border-top: 3px solid #8e4a15;
-        border-right: 3px solid #8e4a15;
+        border-top: 3px solid $fontColor-brown;
+        border-right: 3px solid $fontColor-brown;
         transform: rotate(45deg);
         transition: 500ms;
       }
       &:hover {
         &::after {
-          border-color: #dfb15b;
+          border-color: $fontColor;
         }
       }
     }
@@ -259,7 +259,7 @@ section h1 {
             color: #d6e9e5;
           }
           h2 {
-            color: #dfb15b;
+            color: $fontColor;
           }
         }
         .pic {
@@ -280,7 +280,7 @@ section h1 {
           text-align: center;
           p {
             font: 600 1.2rem/1 $fontDefault;
-            color: #dfb15b;
+            color: $fontColor;
             margin-bottom: 1.5rem;
             transition: color .5s
           }
@@ -349,7 +349,7 @@ section h1 {
   .wrap .cardImgBox {
     &::before {
       left: -2rem;
-      background-color: #f6ebe4;
+      background-color: $bgPoint-1;
     }
   }
 }
@@ -361,7 +361,7 @@ section h1 {
   .wrap .cardImgBox {
     &::before {
       right: -2rem;
-      background-color: #e0e1da;
+      background-color: $bgPoint-2;
     }
   }
 }
@@ -392,7 +392,7 @@ section h1 {
         border: 1px solid transparent;
         transition: .5s;
         &::hover {
-          border-color: #dfb15b;
+          border-color: $fontColor;
         }
         img {
           width: 100%;
@@ -519,7 +519,7 @@ section h1 {
           bottom: -1rem;
           left: -1rem;
           z-index: -1;
-          background-color: #f6ebe4;
+          background-color: $bgPoint-1;
         }
         .card_img_wrap {
           margin-right: -5rem;

@@ -347,6 +347,13 @@ header .logo a img {
   bottom: 0;
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  transform: translate(0) scale(0);
+  transform-origin: top right;
+  transition: 500ms;
+}
+.gnb_box .gnb_overlay.fade_bg {
+  transform: translate(50%, -50%) scale(2);
 }
 
 .gnb_inner {
@@ -358,6 +365,13 @@ header .logo a img {
   bottom: 0;
   padding: 1.6rem;
   background-color: #fff;
+  opacity: 0;
+  transition: 500ms;
+  transform: translateX(100%);
+}
+.gnb_inner.mob_open {
+  opacity: 1;
+  transform: translateX(0);
 }
 .gnb_inner .gnb_cancle {
   width: 3rem;
@@ -540,6 +554,8 @@ header.scroll .logo img {
     padding: 0;
     background: transparent;
     padding: 0;
+    opacity: 1;
+    transform: translateX(0);
   }
   .gnb_inner .gnb_cancle {
     display: none;
@@ -567,6 +583,10 @@ header.scroll .logo img {
   }
   .util li a i {
     font-size: 18px;
+  }
+
+  header.scroll #gnb ul li a {
+    line-height: 80px;
   }
 }
 /* ---------------------------- footer ---------------------------- */

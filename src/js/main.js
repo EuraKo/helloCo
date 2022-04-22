@@ -1,10 +1,10 @@
 var mainSwiper = new Swiper(".mainSwiper", {
   effect: "fade",
   loop: true,
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2000,
+  //   disableOnInteraction: false,
+  // },
   navigation: {
     nextEl: ".mainSwiper .swiper-button-next",
     prevEl: ".mainSwiper .swiper-button-prev",
@@ -38,10 +38,6 @@ var swiper = new Swiper(".rollingSwiper", {
 
 
 window.addEventListener('load', () => {
-  const loading = document.querySelector('.loading');
-
-  loading.style.display = 'none';
-
   new Banner('.banner1');
   new Banner('.banner2');
   new Scroll();

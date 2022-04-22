@@ -347,6 +347,13 @@ header .logo a img {
   bottom: 0;
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  transform: translate(0) scale(0);
+  transform-origin: top right;
+  transition: 500ms;
+}
+.gnb_box .gnb_overlay.fade_bg {
+  transform: translate(50%, -50%) scale(2);
 }
 
 .gnb_inner {
@@ -358,6 +365,13 @@ header .logo a img {
   bottom: 0;
   padding: 1.6rem;
   background-color: #fff;
+  opacity: 0;
+  transition: 500ms;
+  transform: translateX(100%);
+}
+.gnb_inner.mob_open {
+  opacity: 1;
+  transform: translateX(0);
 }
 .gnb_inner .gnb_cancle {
   width: 3rem;
@@ -540,6 +554,8 @@ header.scroll .logo img {
     padding: 0;
     background: transparent;
     padding: 0;
+    opacity: 1;
+    transform: translateX(0);
   }
   .gnb_inner .gnb_cancle {
     display: none;
@@ -567,6 +583,10 @@ header.scroll .logo img {
   }
   .util li a i {
     font-size: 18px;
+  }
+
+  header.scroll #gnb ul li a {
+    line-height: 80px;
   }
 }
 /* ---------------------------- footer ---------------------------- */
@@ -628,6 +648,7 @@ footer .footerTop p::after {
 }
 .members {
   background-color: #fafafa;
+  background-image: url(../img/bg-2.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -663,7 +684,7 @@ footer .footerTop p::after {
   transition: 800ms;
 }
 .members #members .wrap article.member:hover {
-  box-shadow: 1px 1px 5px rgba(255, 82, 82, 0.6), -1px -1px 5px rgba(255, 82, 82, 0.6);
+  box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.8), -1px -1px 5px rgba(51, 51, 51, 0.8);
 }
 .members #members .wrap article.member:hover::before {
   left: 130%;
@@ -694,7 +715,7 @@ footer .footerTop p::after {
   top: 0;
   left: 0;
   padding: 10px;
-  background-color: rgba(255, 82, 82, 0.6);
+  background-color: rgba(51, 51, 51, 0.8);
   font: 1.4rem/1.4 "Montserrat";
   color: #fff;
   letter-spacing: 5px;
@@ -712,16 +733,16 @@ footer .footerTop p::after {
   letter-spacing: 1px;
 }
 .members #members .wrap article.member.team_rnd:hover {
-  box-shadow: 1px 1px 5px rgba(163, 82, 255, 0.6), -1px -1px 5px rgba(163, 82, 255, 0.6);
+  box-shadow: 1px 1px 5px rgba(142, 74, 21, 0.8), -1px -1px 5px rgba(142, 74, 21, 0.8);
 }
 .members #members .wrap article.member.team_rnd .team_name {
-  background-color: rgba(163, 82, 255, 0.6);
+  background-color: rgba(142, 74, 21, 0.8);
 }
 .members #members .wrap article.member.team_design:hover {
-  box-shadow: 1px 1px 5px rgba(82, 137, 255, 0.6), -1px -1px 5px rgba(82, 137, 255, 0.6);
+  box-shadow: 1px 1px 5px rgba(84, 81, 35, 0.8), -1px -1px 5px rgba(84, 81, 35, 0.8);
 }
 .members #members .wrap article.member.team_design .team_name {
-  background-color: rgba(82, 137, 255, 0.6);
+  background-color: rgba(84, 81, 35, 0.8);
 }
 
 @media (min-width: 640px) {
