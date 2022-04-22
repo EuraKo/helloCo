@@ -1,7 +1,7 @@
 class Banner {
   constructor(elem) {
     this.init(elem);
-    this.bindingEvent();
+    this.bindingEvent(elem);
   }
 
   init(elem) {
@@ -25,7 +25,10 @@ class Banner {
     this.$bannerCont.style.left = `${-this.itemW}px`;
   }
 
-  bindingEvent() {
+  bindingEvent(elem) {
+    window.addEventListener('resize', e => {
+      this.init(elem);
+    })
     this.prev.addEventListener('click', e => {
       this.prevBtn();
 

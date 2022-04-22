@@ -10,6 +10,7 @@ $colorBk:#333;
 $colorLightGray: #eee;
 $colorDarkGary:#777;
 $bgGary:#eee;
+$bgLight: #fafafa;
 $colorRed: #ff5252;
 $colorViolt:#a352ff;
 $colorBlue :#5289ff;
@@ -21,9 +22,10 @@ $designColor: rgba($colorBlue, 0.6);
 // 폰트
 $fontDefault: "Montserrat",
 serif;
-$fontPoint: "Homemade Apple",
+$fontPoint: 'Cardo',
 sans-serif;
-$fontPoint-2: "Cinzel Decorative",
+// $fontPoint-2: "Cinzel Decorative",
+$fontPoint-2: "Audrey",
 sans-serif;
 // 폰트사이즈
 $fontTitle: 24px;

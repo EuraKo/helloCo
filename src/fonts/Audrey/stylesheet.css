@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Audrey';
+    src: url('Audrey-Bold.eot');
+    src: local('Audrey Bold'), local('Audrey-Bold'),
+        url('Audrey-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Audrey-Bold.woff2') format('woff2'),
+        url('Audrey-Bold.woff') format('woff'),
+        url('Audrey-Bold.ttf') format('truetype'),
+        url('Audrey-Bold.svg#Audrey-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Audrey Med';
+    src: url('Audrey-Medium.eot');
+    src: local('Audrey Medium'), local('Audrey-Medium'),
+        url('Audrey-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Audrey-Medium.woff2') format('woff2'),
+        url('Audrey-Medium.woff') format('woff'),
+        url('Audrey-Medium.ttf') format('truetype'),
+        url('Audrey-Medium.svg#Audrey-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Audrey';
+    src: url('Audrey-Normal.eot');
+    src: local('Audrey Normal'), local('Audrey-Normal'),
+        url('Audrey-Normal.eot?#iefix') format('embedded-opentype'),
+        url('Audrey-Normal.woff2') format('woff2'),
+        url('Audrey-Normal.woff') format('woff'),
+        url('Audrey-Normal.ttf') format('truetype'),
+        url('Audrey-Normal.svg#Audrey-Normal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

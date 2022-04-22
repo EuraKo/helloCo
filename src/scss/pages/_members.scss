@@ -1,84 +1,93 @@
 .members {
-  background-color: $bgGary;
+  background-color: $bgLight;
+  // background-image: url(../img/bg-2.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   #members {
-    .inner {
-      .wrap {
-        display: flex;
-        flex-wrap: wrap;
-        article.member {
-          width: 100%;
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      article.member {
+        width: 100%;
+        position: relative;
+        margin-bottom: 11%;
+        padding: 20px 20px 30px;
+        box-shadow: 10px 10px 4px rgba(192, 192, 192, 0.3);
+        background-color: #fff;
+        overflow: hidden;
+        transition: 500ms;
+        border-radius: .5em;
+        &:before {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 120%;
+          background-color: rgba(255, 255, 255, 0.8);
+          filter: blur(10px);
+          position: absolute;
+          top: 0;
+          left: -50%;
+          z-index: 10;
+          transform: skew(-20deg);
+          transition: 800ms;
+        }
+        &:hover {
+          box-shadow: 1px 1px 5px $ceoColor, -1px -1px 5px $ceoColor;
+          &::before {
+            left: 130%;
+          }
+        }
+        .img_box {
+          height: 100vmin;
           position: relative;
-          margin-bottom: 11%;
-          padding: 20px 20px 30px;
-          box-shadow: 10px 10px 4px rgba(192, 192, 192, 0.3);
-          background-color: #fff;
           overflow: hidden;
-          transition: 500ms;
-          &:before {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 120%;
-            background-color: rgba(255, 255, 255, 0.8);
-            filter: blur(10px);
+          .pic {
+            height: 80%;
+            @include img;
+          }
+          .team_name {
+            width: 100px;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
             position: absolute;
             top: 0;
-            left: -50%;
-            z-index: 10;
-            transform: skew(-20deg);
-            transition: 800ms;
+            left: 0;
+            padding: 10px;
+            background-color: $ceoColor;
+            font: 1.4rem/1.4 'Montserrat';
+            color: #fff;
+            letter-spacing: 5px;
           }
+        }
+        h2 {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          text-align: left;
+          font-size: 2rem;
+          font-family: 'Montserrat';
+          letter-spacing: 3px;
+        }
+        p {
+          font-size: 1.6rem;
+          letter-spacing: 1px;
+        }
+        &.team_rnd {
           &:hover {
-            box-shadow: 1px 1px 5px $ceoColor, -1px -1px 5px $ceoColor;
-            &::before {
-              left: 130%;
-            }
+            box-shadow: 1px 1px 5px $rndColor, -1px -1px 5px $rndColor;
           }
-          .img_box {
-            height: 100vmin;
-            position: relative;
-            .pic {
-              height: 80%;
-              @include img;
-            }
-            .team_name {
-              width: 100px;
-              height: 100%;
-              display: flex;
-              align-items: flex-end;
-              position: absolute;
-              top: 0;
-              left: 0;
-              padding: 10px;
-              background-color: $ceoColor;
-              font: 1.4rem/1.4 'Montserrat';
-              color: #fff;
-              letter-spacing: 5px;
-            }
+          .team_name {
+            background-color: $rndColor;
           }
-          h2 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            text-align: left;
-            font-size: 2rem;
-            font-family: 'Montserrat';
-            letter-spacing: 3px;
+        }
+        &.team_design {
+          &:hover {
+            box-shadow: 1px 1px 5px $designColor, -1px -1px 5px $designColor;
           }
-          &.team_rnd {
-            &:hover {
-              box-shadow: 1px 1px 5px $rndColor, -1px -1px 5px $rndColor;
-            }
-            .team_name {
-              background-color: $rndColor;
-            }
-          }
-          &.team_design {
-            &:hover {
-              box-shadow: 1px 1px 5px $designColor, -1px -1px 5px $designColor;
-            }
-            .team_name {
-              background-color: $designColor;
-            }
+          .team_name {
+            background-color: $designColor;
           }
         }
       }
@@ -89,19 +98,17 @@
 @include mobile {
   .members {
     #members {
-      .inner {
-        .wrap {
-          article {
-            &.member {
-              width: 48%;
-              margin-right: 4%;
-              margin-bottom: 4%;
-              &:nth-of-type(2n) {
-                margin-right: 0;
-              }
-              .img_box {
-                height: 50vmin;
-              }
+      .wrap {
+        article {
+          &.member {
+            width: 48%;
+            margin-right: 4%;
+            margin-bottom: 4%;
+            &:nth-of-type(2n) {
+              margin-right: 0;
+            }
+            .img_box {
+              height: 50vmin;
             }
           }
         }
@@ -113,22 +120,20 @@
 @include tablet {
   .members {
     #members {
-      .inner {
-        .wrap {
-          article {
-            &.member {
-              width: 26%;
+      .wrap {
+        article {
+          &.member {
+            width: 26%;
+            margin-right: 11%;
+            margin-bottom: 11%;
+            &:nth-of-type(2n) {
               margin-right: 11%;
-              margin-bottom: 11%;
-              &:nth-of-type(2n) {
-                margin-right: 11%;
-              }
-              &:nth-of-type(3n) {
-                margin-right: 0;
-              }
-              .img_box {
-                height: 300px;
-              }
+            }
+            &:nth-of-type(3n) {
+              margin-right: 0;
+            }
+            .img_box {
+              height: 300px;
             }
           }
         }
