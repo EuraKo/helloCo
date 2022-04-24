@@ -55,6 +55,7 @@ ol {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 button {
@@ -72,7 +73,7 @@ html,
 body {
   font-size: 10px;
   overflow-x: hidden;
-  font-family: "Montserrat", serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* 
@@ -81,7 +82,7 @@ body {
 */
 h1,
 h2 {
-  font-family: "Montserrat", serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
 
@@ -227,10 +228,12 @@ h2 {
 }
 
 table {
+  font-size: 1.6rem;
   width: 100%;
   border-bottom: 2px solid #333;
   margin-bottom: 50px;
   border-collapse: collapse;
+  font-family: "Montserrat", sans-serif;
 }
 table thead {
   border-top: 2px solid #000;
@@ -256,11 +259,11 @@ table tbody tr {
   border-bottom: 1px solid #aaa;
 }
 table tbody tr:hover {
-  background-color: #5289ff;
-  color: #fff;
+  background-color: #f6ebe4;
+  color: #8e4a15;
 }
 table tbody tr:hover a {
-  color: #fff;
+  color: #8e4a15;
 }
 table tbody tr td {
   padding: 13px;
@@ -269,12 +272,7 @@ table tbody tr td {
 table tbody tr td:nth-of-type(2) {
   text-align: left;
 }
-table tbody tr td:nth-of-type(3) {
-  font-family: "맑은고딕";
-}
 table tbody tr td a {
-  color: #333;
-  font-family: "arial";
   line-height: 1.4;
 }
 
@@ -591,7 +589,7 @@ header.scroll .logo img {
 }
 /* ---------------------------- footer ---------------------------- */
 footer {
-  font: 600 10px/1.5 "Montserrat", serif;
+  font: 600 10px/1.5 "Montserrat", sans-serif;
   letter-spacing: 2px;
   background-color: #464648;
   color: #fff;
@@ -685,7 +683,7 @@ section h1:after {
   text-align: center;
 }
 .content p {
-  font: 1.6rem/2 "Montserrat", serif;
+  font: 1.6rem/2 "Montserrat", sans-serif;
   margin-bottom: 2em;
 }
 .content .point {
@@ -731,7 +729,7 @@ section h1:after {
   display: inline-block;
   padding: 0.3em 1em;
   background-color: #333;
-  font-family: "Montserrat", serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
   color: #fff;
 }
@@ -942,7 +940,7 @@ section h1:after {
 }
 #popular .inner .wrap article .cont p,
 #favorite .inner .wrap article .cont p {
-  font: 600 1.2rem/1 "Montserrat", serif;
+  font: 600 1.2rem/1 "Montserrat", sans-serif;
   color: #dfb15b;
   margin-bottom: 1.5rem;
   transition: color 0.5s;
@@ -1389,7 +1387,7 @@ section h1:after {
   margin-top: 0.5em;
 }
 #book .box .content p {
-  font: 20px/1.5 "Montserrat", serif;
+  font: 20px/1.5 "Montserrat", sans-serif;
   margin-bottom: 20px;
 }
 #book input {
