@@ -64,6 +64,22 @@ button {
   cursor: pointer;
 }
 
+fieldset {
+  border: 0;
+}
+
+input {
+  font-size: 1.6rem;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5em;
+}
+
+.radio,
+.checkbox {
+  cursor: pointer;
+}
+
 .hidden {
   position: absolute;
   text-indent: -9999px;
@@ -438,7 +454,18 @@ header .logo a img {
   color: #dfb15b;
 }
 .util li a i {
-  font-size: 16px;
+  font-size: 1.6rem;
+}
+.util li:last-of-type {
+  display: flex;
+  align-items: center;
+}
+.util li:last-of-type a {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #8e4a15;
 }
 
 header.scroll .header_wrap {

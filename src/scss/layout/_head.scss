@@ -151,7 +151,18 @@
          color: $fontColor;
        }
        i {
-         font-size: 16px;
+         font-size: 1.6rem;
+       }
+     }
+     &:last-of-type {
+       display: flex;
+       align-items: center;
+       a {
+         display: inline-block;
+         font-size: 1.6rem;
+         font-weight: bold;
+         line-height: 1;
+         color: $fontColor-brown;
        }
      }
    }

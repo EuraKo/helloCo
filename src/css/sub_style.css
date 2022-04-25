@@ -63,6 +63,22 @@ button {
   cursor: pointer;
 }
 
+fieldset {
+  border: 0;
+}
+
+input {
+  font-size: 1.6rem;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5em;
+}
+
+.radio,
+.checkbox {
+  cursor: pointer;
+}
+
 .hidden {
   position: absolute;
   text-indent: -9999px;
@@ -437,7 +453,18 @@ header .logo a img {
   color: #dfb15b;
 }
 .util li a i {
-  font-size: 16px;
+  font-size: 1.6rem;
+}
+.util li:last-of-type {
+  display: flex;
+  align-items: center;
+}
+.util li:last-of-type a {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #8e4a15;
 }
 
 header.scroll .header_wrap {
@@ -878,6 +905,165 @@ footer .footerTop p::after {
   }
   .qna_icons .icon {
     margin-left: 0.5em;
+  }
+}
+.join {
+  background-image: url(../img/bg-3.jpg);
+}
+.join .inner {
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 800px;
+  padding-bottom: 10em;
+}
+@media screen and (min-width: 1200px) {
+  .join .inner {
+    padding: 0;
+  }
+}
+.join .inner_cont {
+  padding: 3em;
+  backdrop-filter: blur(5px);
+}
+.join .left_cont h2 {
+  font-size: 3.6rem;
+  font-family: "Cardo", sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 0.4em;
+}
+.join .left_cont p {
+  font-size: 1.6rem;
+  margin-bottom: 2em;
+}
+.join .right_cont .input_group {
+  margin-bottom: 3em;
+  position: relative;
+}
+.join .right_cont .input_group .form_title {
+  font-size: 1.8rem;
+  color: #dfb15b;
+  margin-bottom: 0.5em;
+}
+.join .right_cont .input_group input[type=text],
+.join .right_cont .input_group input[type=password] {
+  width: 100%;
+  max-width: 30rem;
+  height: 3.4rem;
+  box-shadow: 5px 5px #f6ebe4;
+}
+.join .right_cont .input_group select {
+  width: 100%;
+  max-width: 30rem;
+  height: 3.4rem;
+  margin-top: 0.5em;
+  border: 1px solid #f6ebe4;
+  box-shadow: 5px 5px #f6ebe4;
+}
+.join .right_cont .input_group .err_msg {
+  position: absolute;
+}
+.join .right_cont .radio {
+  position: relative;
+  padding-left: 2.2rem;
+  font-size: 1.6rem;
+  color: #777;
+  margin-right: 1em;
+}
+.join .right_cont .radio:before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-color: #ccc;
+  border-radius: 50%;
+  outline: 1px solid #ccc;
+  outline-offset: 3px;
+}
+.join .right_cont .radio input {
+  width: 0;
+  height: 0;
+}
+.join .right_cont .radio.on {
+  color: #333;
+}
+.join .right_cont .radio.on::before {
+  background-color: #8e4a15;
+  outline-color: #8e4a15;
+}
+.join .right_cont .btn_wrap {
+  display: flex;
+  margin-top: 5em;
+}
+.join .right_cont .btn_wrap input {
+  width: 50%;
+  height: 3.4rem;
+  margin-right: 2%;
+  background: #eee;
+  color: #777;
+  cursor: pointer;
+}
+.join .right_cont .btn_wrap input.btn_submit {
+  background: #8e4a15;
+  color: #fff;
+  margin-right: 0;
+}
+
+.err_msg {
+  font-size: 1.2rem;
+  color: #ff5252;
+  margin-top: 0.5em;
+}
+
+@media (min-width: 640px) {
+  .join .right_cont .input_group .input_mail {
+    display: flex;
+    align-items: center;
+  }
+  .join .right_cont .input_group .input_mail input {
+    margin-right: 2%;
+  }
+  .join .right_cont .input_group .input_mail select {
+    margin-top: 0;
+  }
+}
+@media (min-width: 840px) {
+  .join .inner_cont {
+    display: flex;
+    padding: 0;
+  }
+  .join .inner_cont .left_cont {
+    width: 50%;
+    background: url(../img/blog/HC-post-62.jpg) no-repeat center/cover;
+    padding: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 10px #333;
+  }
+  .join .inner_cont .right_cont {
+    width: 50%;
+    padding: 2rem 3rem;
+    border: 1px solid #e0e1da;
+    border-left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .join {
+    padding-bottom: 10em;
+  }
+  .join .right_cont .input_group input[type=text],
+.join .right_cont .input_group input[type=password],
+.join .right_cont .input_group select {
+    max-width: 100%;
+  }
+  .join .right_cont .input_group .input_mail {
+    display: block;
+  }
+  .join .right_cont .input_group .input_mail select {
+    margin-top: 0.5em;
   }
 }
 .content {
