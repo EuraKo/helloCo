@@ -1328,6 +1328,7 @@ footer .footerTop p::after {
   transform: rotate(-45deg);
 }
 .pop .pop_cancle span {
+  display: inline-block;
   opacity: 0;
   transform: translateX(-100%);
   transition: 300ms;
