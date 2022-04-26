@@ -61,7 +61,7 @@ function callData(url) {
 function creatList(data) {
   let htmls = '';
   data.map(item => {
-    console.log(item)
+    // console.log(item)
     htmls += `
       <li>
         <a href="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg">

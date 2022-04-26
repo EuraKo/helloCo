@@ -12,7 +12,6 @@ btnSubmit.addEventListener('click', (e) => {
 radio.forEach((el) => {
   el.addEventListener('click', e => {
     // 이벤트 두번발생??
-    console.log(e.currentTarget)
     for (const radios of radio) radios.classList.remove('on');
     el.classList.add('on');
   })
