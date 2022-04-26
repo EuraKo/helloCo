@@ -1252,18 +1252,18 @@ footer .footerTop p::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 3rem 1rem 1rem;
+  padding: 3rem 1rem 2rem;
   background-image: linear-gradient(to top, #333, transparent);
   color: #fff;
 }
 .gallery .list ul li a .cont .title {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 0.5em;
 }
 .gallery .list ul li a .cont .owner {
-  display: flex;
+  display: none;
   align-items: center;
+  margin-top: 1em;
 }
 .gallery .list ul li a .cont .img_owner {
   width: 3rem;
@@ -1436,6 +1436,9 @@ footer .footerTop p::after {
     grid-row-start: 4;
     grid-row-end: 5;
   }
+  .gallery .list ul li a .cont .owner {
+    display: flex;
+  }
 
   .pop .pop_cont {
     display: flex;
@@ -1450,7 +1453,10 @@ footer .footerTop p::after {
   }
   .pop .pop_cont .title {
     margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 1rem;
     border-top: 0;
+    border-left: 0.5rem solid #dfb15b;
   }
 }
 @media (min-width: 1200px) {

@@ -14,12 +14,23 @@ const url = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=
 
 initList(url);
 // 요소 클릭시 팝업 열리게
-items.forEach((el, idx) => {
-  el.addEventListener('click', e => {
-    e.preventDefault();
-    showPop("src/img/HC-About-2.jpg", 'title', 'fsdjksjdfdfkjldskljdsfkljsfkljsdfklj', "https://www.flickr.com/images/buddyicon.gif", 'owner_name');
-  })
-});
+list.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (e.target == list) return;
+
+  const targetParent = e.target.closest('li');
+  let mainImg = targetParent.querySelector('a').getAttribute('href');
+  let title = targetParent.querySelector('.title').innerText;
+  // let desc = targetParent.querySelector('.desc').innerText;
+  let buddy = targetParent.querySelector('.img_owner').getAttribute('src');
+  let owner = targetParent.querySelector('.owner span').innerText;
+  if (targetParent) {
+
+
+    showPop(mainImg, title, 'fsdjksjdfdfkjldskljdsfkljsfkljsdfklj', buddy, owner);
+  }
+
+})
 
 // 팝업닫기
 body.addEventListener('click', e => {
@@ -42,15 +53,15 @@ function callData(url) {
       console.error(err);
     })
     .then(json => {
-      console.log(json)
+      // console.log(json)
       return json.photos.photo;
     })
 }
 
 function creatList(data) {
   let htmls = '';
-  console.log(data)
   data.map(item => {
+    console.log(item)
     htmls += `
       <li>
         <a href="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg">
