@@ -1,4 +1,12 @@
 @import '_pagination';
+.table_layout {
+  overflow-x: auto;
+  table {
+    table-layout: fixed;
+    min-width: 1000px;
+  }
+}
+
 table {
   font-size: 1.6rem;
   width: 100%;
@@ -43,6 +51,8 @@ table {
           text-align: left;
         }
         a {
+          @include ellipsis;
+          display: block;
           line-height: 1.4;
         }
       }

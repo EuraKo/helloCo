@@ -49,3 +49,60 @@ body {
   overflow-x: hidden;
   font-family: $fontDefault;
 }
+
+
+/* 버튼 */
+
+.btn_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_more {
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  font: 2rem/1 $fontPoint-2;
+  &::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 2rem;
+    position: relative;
+    top: -.5em;
+    left: .7em;
+    background-color: #cde4de;
+    transition: .5s;
+  }
+  &:hover {
+    &::after {
+      background-color: #e6e7e1;
+    }
+  }
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.btn_normal {
+  font-size: 1.6rem;
+  display: inline-block;
+  padding: .3em 1em;
+  background-color: $colorBk;
+  font-family: $fontDefault;
+  letter-spacing: 1px;
+  color: #fff;
+  &:hover {
+    background: $colorYellow;
+  }
+}
+
+
+/* 스크롤 감추기 */
+
+.scroll_hidden {
+  height: 100vh;
+  overflow: hidden;
+}

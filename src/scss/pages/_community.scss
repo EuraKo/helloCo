@@ -1,6 +1,9 @@
 .community {
-  .sub_visual {}
   .inner {
     padding-bottom: 10em;
+  }
+  .btn_wrap {
+    justify-content: flex-end;
+    margin-bottom: 1em;
   }
 }
