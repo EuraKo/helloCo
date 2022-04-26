@@ -1,26 +1,76 @@
 const body = document.querySelector('body');
 const gallery = document.querySelector('.gallery');
-const list = gallery.querySelector('.list');
+const list = gallery.querySelector('.list ul');
 const items = list.querySelectorAll('li');
 
+const base = 'https://www.flickr.com/services/rest/?';
+const method = 'flickr.photos.search';
+const key = 'b46a4e7f5822514ab2cbba273b4c9794';
+const per_page = 9;
+const format = 'json';
+
+const url = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&tags=foodstyling&privacy_filter=1`;
+
+
+initList(url);
+// 요소 클릭시 팝업 열리게
 items.forEach((el, idx) => {
   el.addEventListener('click', e => {
     e.preventDefault();
     showPop("src/img/HC-About-2.jpg", 'title', 'fsdjksjdfdfkjldskljdsfkljsfkljsdfklj', "https://www.flickr.com/images/buddyicon.gif", 'owner_name');
   })
 });
+
+// 팝업닫기
 body.addEventListener('click', e => {
-  let pop = body.querySelector('.pop');
-  if (pop !== null) {
-    let close = pop.querySelector('.pop_cancle');
-    let closeSpan = close.querySelector('span');
-    // 좀 더 간결한 코드?
-    if (e.target === close || e.target === closeSpan) {
-      pop.remove();
-      body.classList.remove('scroll_hidden');
-    }
-  }
+  hidePop(e);
 })
+
+// 데이터 호출 및 돔생성
+async function initList(url) {
+  const data = await callData(url);
+  creatList(data);
+}
+
+// 데이터 불러오기
+function callData(url) {
+  return fetch(url)
+    .then(data => {
+      return data.json();
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+    .then(json => {
+      console.log(json)
+      return json.photos.photo;
+    })
+}
+
+function creatList(data) {
+  let htmls = '';
+  console.log(data)
+  data.map(item => {
+    htmls += `
+      <li>
+        <a href="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg">
+          <div class="pic">
+            <img src="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg" alt="">
+          </div>
+          <div class="cont">
+            <div class="title">${item.title}</div>
+            <div class="owner">
+              <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg" class="img_owner" alt="">
+              <span>${item.owner}</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    `;
+  })
+
+  list.innerHTML = htmls;
+}
 
 function showPop(img, title, desc, owner_img, owner_name) {
   body.classList.add('scroll_hidden');
@@ -49,6 +99,15 @@ function showPop(img, title, desc, owner_img, owner_name) {
 
 }
 
-function hidePop() {
-
+function hidePop(e) {
+  let pop = body.querySelector('.pop');
+  if (pop !== null) {
+    let close = pop.querySelector('.pop_cancle');
+    let closeSpan = close.querySelector('span');
+    // 좀 더 간결한 코드?
+    if (e.target === close || e.target === closeSpan) {
+      pop.remove();
+      body.classList.remove('scroll_hidden');
+    }
+  }
 }
