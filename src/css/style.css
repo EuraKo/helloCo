@@ -40,11 +40,23 @@
     transform: rotate(10deg);
   }
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   color: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 ul,
@@ -421,6 +433,8 @@ header .logo a img {
   display: block;
 }
 .gnb_box .gnb_overlay {
+  width: 100vmax;
+  height: 100vmax;
   position: absolute;
   top: 0;
   left: 0;

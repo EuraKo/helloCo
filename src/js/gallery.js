@@ -2,6 +2,9 @@ const body = document.querySelector('body');
 const gallery = document.querySelector('.gallery');
 const list = gallery.querySelector('.list ul');
 const items = list.querySelectorAll('li');
+const search = gallery.querySelector('.search');
+const searchBtn = gallery.querySelector('.btn_search');
+const loading = gallery.querySelector('.list_loading');
 
 const base = 'https://www.flickr.com/services/rest/?';
 const method = 'flickr.photos.search';
@@ -14,7 +17,7 @@ const url = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=
 
 initList(url);
 // 요소 클릭시 팝업 열리게
-list.addEventListener('click', (e) => {
+list.addEventListener('click', e => {
   e.preventDefault();
   if (e.target == list) return;
 
@@ -27,7 +30,7 @@ list.addEventListener('click', (e) => {
   if (targetParent) {
 
 
-    showPop(mainImg, title, 'fsdjksjdfdfkjldskljdsfkljsfkljsdfklj', buddy, owner);
+    showPop(mainImg, title, buddy, owner);
   }
 
 })
@@ -37,10 +40,27 @@ body.addEventListener('click', e => {
   hidePop(e);
 })
 
+// 검색
+search.addEventListener('keyup', e => {
+  if (e.keyCode === 13) searchText();
+});
+
+searchBtn.addEventListener('click', () => {
+  searchText();
+})
+
 // 데이터 호출 및 돔생성
 async function initList(url) {
   const data = await callData(url);
-  creatList(data);
+  if (data.length > 0) {
+    list.classList.remove('no_list');
+    list.classList.add('on');
+    creatList(data);
+    delayLoading();
+
+  } else {
+    notFoundText()
+  }
 }
 
 // 데이터 불러오기
@@ -63,27 +83,28 @@ function creatList(data) {
   data.map(item => {
     // console.log(item)
     htmls += `
-      <li>
-        <a href="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg">
-          <div class="pic">
-            <img src="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg" alt="">
-          </div>
-          <div class="cont">
-            <div class="title">${item.title}</div>
-            <div class="owner">
-              <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg" class="img_owner" alt="">
-              <span>${item.owner}</span>
+        <li>
+          <a href="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg">
+            <div class="pic">
+              <img src="https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg" alt="">
             </div>
-          </div>
-        </a>
-      </li>
-    `;
+            <div class="cont">
+              <div class="title">${item.title}</div>
+              <div class="owner">
+                <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg" class="img_owner" alt="">
+                <span>${item.owner}</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      `;
   })
 
   list.innerHTML = htmls;
+
 }
 
-function showPop(img, title, desc, owner_img, owner_name) {
+function showPop(img, title, owner_img, owner_name) {
   body.classList.add('scroll_hidden');
   const pop = document.createElement('aside');
   pop.classList.add('pop');
@@ -100,7 +121,6 @@ function showPop(img, title, desc, owner_img, owner_name) {
             <img src="${owner_img}">
             <span>${owner_name}</span>
           </div>
-          <div class="desc">${desc}</div>
         </div>
       </div>
     </div>
@@ -120,5 +140,56 @@ function hidePop(e) {
       pop.remove();
       body.classList.remove('scroll_hidden');
     }
+  }
+}
+
+function searchText() {
+  let val = search.value;
+  val = val.trim();
+  const urlSearch = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&tags=${val}&privacy_filter=1`;
+  list.classList.remove('on');
+  if (val !== '') {
+    // loading.style.display = 'block';
+    list.classList.remove('no_list');
+    initList(urlSearch);
+  } else {
+    list.classList.add('on');
+    list.innerHTML = '';
+    const noSearch = document.createElement('div');
+    noSearch.classList.add('no_search');
+    noSearch.append(`검색어가 없습니다.`);
+    list.append(noSearch);
+    list.classList.add('no_list');
+  }
+}
+
+function notFoundText() {
+  let val = search.value;
+
+  list.innerHTML = '';
+  const notfound = document.createElement('div');
+  notfound.classList.add('notfound');
+  notfound.innerHTML = `<span>"${val}"</span>에 대한 검색결과가 없습니다.`;
+  list.append(notfound);
+  list.classList.add('no_list');
+  list.classList.add('on');
+};
+
+function delayLoading() {
+  const imgs = list.querySelectorAll('img');
+  const len = imgs.length;
+  let count = 0;
+
+  for (let el of imgs) {
+    el.onload = () => {
+      count++;
+      if (count === len) { loading.style.display = 'none'; }
+    }
+
+    let profile = el.closest('li').querySelector('.owner img');
+    el.onerror = () => {
+      profile.setAttribute('src', 'src/img/logo-bg.png')
+    }
+
   }
 }

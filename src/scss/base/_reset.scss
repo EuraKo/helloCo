@@ -5,6 +5,10 @@
   color: inherit;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 ul,
 li,
 ol {
