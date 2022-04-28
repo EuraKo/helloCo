@@ -1,4 +1,4 @@
-const body = document.querySelector('body');
+const body = document.body;
 const gallery = document.querySelector('.gallery');
 const list = gallery.querySelector('.list ul');
 const items = list.querySelectorAll('li');
