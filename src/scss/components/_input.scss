@@ -1,0 +1,130 @@
+input,
+textarea {
+  font-size: 1.6rem;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5em;
+  &:focus {
+    outline-color: $colorYellow;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.input_group {
+  margin-bottom: 3em;
+  position: relative;
+  .form_title {
+    font-size: 1.8rem;
+    color: $fontColor;
+    margin-bottom: .5em;
+  }
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    max-width: 30rem;
+    height: 3.4rem;
+    box-shadow: 5px 5px $bgPoint-1;
+  }
+  select {
+    width: 100%;
+    max-width: 30rem;
+    height: 3.4rem;
+    margin-top: .5em;
+    border: 1px solid $bgPoint-1;
+    box-shadow: 5px 5px $bgPoint-1;
+  }
+  textarea {
+    width: 100%;
+    max-width: 30rem;
+    height: 20rem;
+    box-shadow: 5px 5px #f6ebe4;
+  }
+  .err_msg {
+    position: absolute;
+  }
+}
+
+.radio {
+  position: relative;
+  padding-left: 2.2rem;
+  font-size: 1.6rem;
+  color: $colorDarkGary;
+  margin-right: 1em;
+  &:before {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background-color: #ccc;
+    border-radius: 50%;
+    outline: 1px solid #ccc;
+    outline-offset: 3px;
+  }
+  input {
+    width: 0;
+    height: 0;
+  }
+  &.on {
+    color: $colorBk;
+    &::before {
+      background-color: $fontColor-brown;
+      outline-color: $fontColor-brown;
+    }
+  }
+}
+
+.btn_wrap {
+  display: flex;
+  margin-top: 5em;
+  input {
+    width: 50%;
+    height: 3.4rem;
+    margin-right: 2%;
+    background: $colorLightGray;
+    color: $colorDarkGary;
+    cursor: pointer;
+    &.btn_submit {
+      background: $fontColor-brown;
+      color: #fff;
+      margin-right: 0;
+    }
+  }
+}
+
+@include mobile {
+  .input_group {
+    .input_mail {
+      display: flex;
+      align-items: center;
+      input {
+        margin-right: 2%;
+      }
+      select {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .input_group {
+    input[type=text],
+    input[type=password],
+    select,
+    textarea {
+      max-width: 100%;
+    }
+    .input_mail {
+      display: block;
+      select {
+        margin-top: .5em;
+      }
+    }
+  }
+}

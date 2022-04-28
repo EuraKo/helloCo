@@ -5,6 +5,7 @@
 @import 'base/typography';
 @import 'components/_table';
 @import 'components/pop';
+@import 'components/input';
 @import 'layout/head';
 @import 'layout/footer';
 @import 'pages/members';
@@ -13,6 +14,7 @@
 @import 'pages/join';
 @import 'pages/gallery';
 @import 'pages/youtube';
+@import 'pages/location';
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Homemade+Apple&family=Montserrat:wght@300;600&display=swap');
 .content {

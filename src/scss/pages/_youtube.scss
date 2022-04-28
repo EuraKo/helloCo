@@ -57,9 +57,14 @@
   }
 }
 
-iframe {
-  width: 100%;
-  height: 100%;
+.pop_youtube {
+  .pop_cont {
+    height: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @include mobile {

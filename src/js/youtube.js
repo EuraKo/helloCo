@@ -11,7 +11,15 @@ vidList.addEventListener('click', e => {
   e.preventDefault();
   if (!e.target.closest('a')) return;
   let vidId = e.target.closest('a').getAttribute('href');
-  showPop(vidId)
+  let htmls = `
+    <div class="inner">
+      <button type="button" class="pop_cancle"><span>close</span></button>
+      <div class="pop_cont">
+        <iframe src="https://www.youtube.com/embed/${vidId}" frameborder="0" ></iframe>
+      </div>
+    </div>
+  `;
+  showPop('youtube', htmls);
 });
 
 body.addEventListener('click', e => {
@@ -69,33 +77,4 @@ function creatList(items) {
     `;
   });
   vidList.innerHTML = htmls;
-}
-
-function showPop(vidId) {
-  body.classList.add('scroll_hidden');
-  const pop = document.createElement('aside');
-  pop.classList.add('pop');
-  let htmls = `
-    <div class="inner">
-      <button type="button" class="pop_cancle"><span>close</span></button>
-      <div class="pop_cont">
-        <iframe src="https://www.youtube.com/embed/${vidId}" frameborder="0" ></iframe>
-      </div>
-    </div>
-  `;
-  pop.innerHTML = htmls;
-  body.append(pop);
-}
-
-function hidePop(e) {
-  let pop = body.querySelector('.pop');
-  if (pop !== null) {
-    let close = pop.querySelector('.pop_cancle');
-    let closeSpan = close.querySelector('span');
-    // 좀 더 간결한 코드?
-    if (e.target === close || e.target === closeSpan) {
-      pop.remove();
-      body.classList.remove('scroll_hidden');
-    }
-  }
 }
