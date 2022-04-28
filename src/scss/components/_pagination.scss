@@ -9,11 +9,11 @@
       .prev {
         float: left;
         display: block;
-        width: 30px;
-        height: 30px;
+        width: 2rem;
+        height: 2rem;
         position: relative;
         text-align: center;
-        font-size: 12px;
+        font-size: 1.2rem;
         &:after {
           content: "";
           display: block;
@@ -40,7 +40,7 @@
         }
         span {
           display: inline-block;
-          line-height: 30px;
+          line-height: 2rem;
           color: $colorDarkGary;
           text-align: center;
           opacity: 0;
@@ -67,8 +67,7 @@
       .next {
         float: right;
         display: block;
-        width: 30px;
-        height: 30px;
+        width: 2rem;
         position: relative;
         text-align: center;
         font-size: 12px;
@@ -98,7 +97,7 @@
         }
         span {
           display: inline-block;
-          line-height: 30px;
+          line-height: 2rem;
           color: $colorDarkGary;
           text-align: center;
           opacity: 0;
@@ -130,15 +129,33 @@
           display: inline-block;
           border-top: 1px solid #888;
           border-bottom: 1px solid #888;
-          width: 30px;
-          height: 30px;
-          font: 11px/30px 'arial';
+          width: 2rem;
+          height: 2rem;
+          font: 11px/2rem 'arial';
           color: #666;
           margin: 0 5px;
           &:hover {
             background: #666;
             color: #fff;
           }
+        }
+      }
+    }
+    
+    @include mobile {
+      .pagination {
+        .next,
+        .prev {
+          width: 3rem;
+          height: 3rem;
+          span {
+            line-height: 3rem;
+          }
+        }
+        .numbers a {
+          width: 3rem;
+          height: 3rem;
+          line-height: 3rem;
         }
       }
     }

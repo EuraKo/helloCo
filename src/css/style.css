@@ -118,13 +118,13 @@ body {
   display: inline-block;
   margin: 0 auto;
   position: relative;
-  font: 2rem/1 "Audrey", sans-serif;
+  font: 1.6rem/1 "Audrey", sans-serif;
 }
 .btn_more::after {
   content: " ";
   display: block;
   width: 100%;
-  height: 2rem;
+  height: 1em;
   position: relative;
   top: -0.5em;
   left: 0.7em;
@@ -180,11 +180,11 @@ h2 {
 .pagination .prev {
   float: left;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
   text-align: center;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 .pagination .prev:after {
   content: "";
@@ -212,7 +212,7 @@ h2 {
 }
 .pagination .prev span {
   display: inline-block;
-  line-height: 30px;
+  line-height: 2rem;
   color: #777;
   text-align: center;
   opacity: 0;
@@ -236,8 +236,7 @@ h2 {
 .pagination .next {
   float: right;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
   position: relative;
   text-align: center;
   font-size: 12px;
@@ -268,7 +267,7 @@ h2 {
 }
 .pagination .next span {
   display: inline-block;
-  line-height: 30px;
+  line-height: 2rem;
   color: #777;
   text-align: center;
   opacity: 0;
@@ -298,9 +297,9 @@ h2 {
   display: inline-block;
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
-  width: 30px;
-  height: 30px;
-  font: 11px/30px "arial";
+  width: 2rem;
+  height: 2rem;
+  font: 11px/2rem "arial";
   color: #666;
   margin: 0 5px;
 }
@@ -309,6 +308,22 @@ h2 {
   color: #fff;
 }
 
+@media (min-width: 640px) {
+  .pagination .next,
+.pagination .prev {
+    width: 3rem;
+    height: 3rem;
+  }
+  .pagination .next span,
+.pagination .prev span {
+    line-height: 3rem;
+  }
+  .pagination .numbers a {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+}
 .table_layout {
   overflow-x: auto;
 }
@@ -576,8 +591,7 @@ header.scroll .logo img {
   font-family: "Audrey", sans-serif;
 }
 .loading div {
-  font-size: 6rem;
-  letter-spacing: 2px;
+  font-size: 3rem;
 }
 .loading span {
   opacity: 0;
@@ -694,6 +708,11 @@ header.scroll .logo img {
   header.scroll #gnb ul li a {
     line-height: 80px;
   }
+
+  .loading div {
+    font-size: 6rem;
+    letter-spacing: 2px;
+  }
 }
 /* ---------------------------- footer ---------------------------- */
 footer {
@@ -785,17 +804,17 @@ section h1:after {
   padding: 0;
 }
 .content h2 {
-  font: 500 3rem/1 "Audrey", sans-serif;
+  font: 500 2.4rem/1 "Audrey", sans-serif;
   margin-top: 2em;
   margin-bottom: 0.5em;
   text-align: center;
 }
 .content p {
-  font: 1.6rem/2 "Montserrat", sans-serif;
-  margin-bottom: 2em;
+  font: 1.4rem/1.5 "Montserrat", sans-serif;
+  margin-bottom: 1.5em;
 }
 .content .point {
-  font: 2rem/2 "Audrey", sans-serif;
+  font: 1.6rem/1.5 "Audrey", sans-serif;
   color: #dfb15b;
   text-align: center;
 }
@@ -835,14 +854,14 @@ section h1:after {
   text-align: right;
 }
 #main .mainSwiper .swiper-slide .cont h2 {
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-family: "Audrey", sans-serif;
   text-transform: uppercase;
   color: #8e4a15;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5em;
 }
 #main .mainSwiper .swiper-slide .cont p {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 #main .mainSwiper .swiper-button-next,
 #main .mainSwiper .swiper-button-prev {
@@ -902,17 +921,17 @@ section h1:after {
 #favorite .inner:after {
   content: "";
   display: block;
-  width: 20rem;
-  height: 20rem;
+  width: 13rem;
+  height: 13rem;
   position: absolute;
-  bottom: -10rem;
-  right: -5rem;
+  bottom: -5rem;
+  right: -3rem;
   z-index: 5;
   background: url(../img/HC-Badge.png) no-repeat center/cover;
 }
 #popular .inner h1,
 #favorite .inner h1 {
-  font: 3rem/1 "Cardo", sans-serif;
+  font: 2.4rem/1 "Cardo", sans-serif;
   padding: 0.8em 0;
 }
 #popular .inner .wrap article,
@@ -997,7 +1016,7 @@ section h1:after {
   background-color: rgba(255, 255, 255, 0.9);
   outline: 1px solid #fff;
   outline-offset: 5px;
-  padding: 3.2rem 2.4rem;
+  padding: 2.2em 1.4em;
   box-sizing: border-box;
   text-align: center;
 }
@@ -1010,7 +1029,7 @@ section h1:after {
 }
 #popular .inner .wrap article .cont h2,
 #favorite .inner .wrap article .cont h2 {
-  font: 2.2rem/1.5 "Audrey", sans-serif;
+  font: 1.6rem/1.5 "Audrey", sans-serif;
   text-transform: uppercase;
   transition: color 0.5s;
 }
@@ -1445,12 +1464,12 @@ section h1:after {
   text-align: center;
 }
 #book .box .content h2 {
-  font: 3rem/1 "Cardo", sans-serif;
+  font: 2.4rem/1 "Cardo", sans-serif;
   margin-bottom: 20px;
   margin-top: 0.5em;
 }
 #book .box .content p {
-  font: 20px/1.5 "Montserrat", sans-serif;
+  font: 1.4rem/1.5 "Montserrat", sans-serif;
   margin-bottom: 20px;
 }
 #book input {
@@ -1471,6 +1490,18 @@ section h1:after {
 }
 
 @media (min-width: 640px) {
+  .content h2 {
+    font-size: 3rem;
+  }
+  .content p {
+    font-size: 1.6rem;
+    line-height: 2;
+  }
+  .content .point {
+    font-size: 2rem;
+    line-height: 2;
+  }
+
   #main {
     height: calc(100vh - 150px);
   }
@@ -1484,6 +1515,8 @@ section h1:after {
 
   #popular .inner::after,
 #favorite .inner::after {
+    width: 20rem;
+    height: 20rem;
     bottom: 3rem;
     right: 3rem;
   }
@@ -1519,6 +1552,10 @@ section h1:after {
 #dessert .wrap .cardImgBox::before {
     left: -4em;
     top: 4em;
+  }
+
+  #dessert .inner_box .inner_cont h3 {
+    font-size: 2.3rem;
   }
 
   #recipes .wrap {
@@ -1644,6 +1681,7 @@ section h1:after {
   }
   #dessert .inner_box .pic {
     width: 50%;
+    margin: 0 auto;
   }
 
   #book .box {

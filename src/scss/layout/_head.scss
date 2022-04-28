@@ -198,8 +198,7 @@
    overflow: hidden;
    font-family: $fontPoint-2;
    div {
-     font-size: 6rem;
-     letter-spacing: 2px;
+     font-size: 3rem;
    }
    span {
      opacity: 0;
@@ -291,5 +290,9 @@
    }
    header.scroll #gnb ul li a {
      line-height: 80px;
+   }
+   .loading div {
+     font-size: 6rem;
+     letter-spacing: 2px;
    }
  }

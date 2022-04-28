@@ -35,17 +35,17 @@ section h1 {
 .content {
   padding: 0;
   h2 {
-    font: 500 3rem/1 $fontPoint-2;
+    font: 500 2.4rem/1 $fontPoint-2;
     margin-top: 2em;
     margin-bottom: .5em;
     text-align: center;
   }
   p {
-    font: 1.6rem/2 $fontDefault;
-    margin-bottom: 2em;
+    font: 1.4rem/1.5 $fontDefault;
+    margin-bottom: 1.5em;
   }
   .point {
-    font: 2rem/2 $fontPoint-2;
+    font: 1.6rem/1.5 $fontPoint-2;
     color: $fontColor;
     text-align: center;
   }
@@ -84,14 +84,14 @@ section h1 {
         outline-offset: 1.5rem;
         text-align: right;
         h2 {
-          font-size: 3rem;
+          font-size: 2.4rem;
           font-family: $fontPoint-2;
           text-transform: uppercase;
           color: $fontColor-brown;
-          margin-bottom: 1rem;
+          margin-bottom: .5em;
         }
         p {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
         }
       }
     }
@@ -156,16 +156,16 @@ section h1 {
     &:after {
       content: '';
       display: block;
-      width: 20rem;
-      height: 20rem;
+      width: 13rem;
+      height: 13rem;
       position: absolute;
-      bottom: -10rem;
-      right: -5rem;
+      bottom: -5rem;
+      right: -3rem;
       z-index: 5;
       background: url(../img/HC-Badge.png) no-repeat center/cover;
     }
     h1 {
-      font: 3rem/1 $fontPoint;
+      font: 2.4rem/1 $fontPoint;
       padding: .8em 0;
     }
     .wrap {
@@ -226,7 +226,7 @@ section h1 {
           background-color: rgba(255, 255, 255, 0.9);
           outline: 1px solid #fff;
           outline-offset: 5px;
-          padding: 3.2rem 2.4rem;
+          padding: 2.2em 1.4em;
           box-sizing: border-box;
           text-align: center;
           p {
@@ -236,7 +236,7 @@ section h1 {
             transition: color .5s
           }
           h2 {
-            font: 2.2rem/1.5 $fontPoint-2;
+            font: 1.6rem/1.5 $fontPoint-2;
             text-transform: uppercase;
             transition: color .5s;
           }
@@ -632,12 +632,12 @@ section h1 {
     .content {
       text-align: center;
       h2 {
-        font: 3rem/1 $fontPoint;
+        font: 2.4rem/1 $fontPoint;
         margin-bottom: 20px;
         margin-top: .5em;
       }
       p {
-        font: 20px/1.5 $fontDefault;
+        font: 1.4rem/1.5 $fontDefault;
         margin-bottom: 20px;
       }
     }
@@ -661,6 +661,19 @@ section h1 {
 }
 
 @include mobile {
+  .content {
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 2;
+    }
+    .point {
+      font-size: 2rem;
+      line-height: 2;
+    }
+  }
   #main {
     height: calc(100vh - 150px);
     .mainSwiper .swiper-slide .cont {
@@ -677,6 +690,8 @@ section h1 {
   #favorite {
     .inner {
       &::after {
+        width: 20rem;
+        height: 20rem;
         bottom: 3rem;
         right: 3rem;
       }
@@ -712,6 +727,11 @@ section h1 {
           top: 4em;
         }
       }
+    }
+  }
+  #dessert .inner_box .inner_cont {
+    h3 {
+      font-size: 2.3rem;
     }
   }
   #recipes {
@@ -842,6 +862,7 @@ section h1 {
     .inner_box {
       .pic {
         width: 50%;
+        margin: 0 auto;
       }
     }
   }

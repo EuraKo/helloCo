@@ -24,7 +24,7 @@ section {
     @include inner;
   }
   h1 {
-    font: 500 4rem/1 $fontPoint-2;
+    font: 500 3rem/1 $fontPoint-2;
     padding: 2em 0 1em;
     text-align: center;
     letter-spacing: .2em;
@@ -41,6 +41,14 @@ section {
         transform: translateY(-50%);
         background: $colorBk;
       }
+    }
+  }
+}
+
+@include narrow {
+  section {
+    h1 {
+      font-size: 3.4rem;
     }
   }
 }

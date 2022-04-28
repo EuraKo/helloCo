@@ -20,7 +20,7 @@ initList(url);
 list.addEventListener('click', e => {
   e.preventDefault();
   if (e.target == list) return;
-
+  console.log(e)
   const targetParent = e.target.closest('li');
   let mainImg = targetParent.querySelector('a').getAttribute('href');
   let title = targetParent.querySelector('.title').innerText;

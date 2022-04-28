@@ -118,13 +118,13 @@ body {
   display: inline-block;
   margin: 0 auto;
   position: relative;
-  font: 2rem/1 "Audrey", sans-serif;
+  font: 1.6rem/1 "Audrey", sans-serif;
 }
 .btn_more::after {
   content: " ";
   display: block;
   width: 100%;
-  height: 2rem;
+  height: 1em;
   position: relative;
   top: -0.5em;
   left: 0.7em;
@@ -180,11 +180,11 @@ h2 {
 .pagination .prev {
   float: left;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
   text-align: center;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 .pagination .prev:after {
   content: "";
@@ -212,7 +212,7 @@ h2 {
 }
 .pagination .prev span {
   display: inline-block;
-  line-height: 30px;
+  line-height: 2rem;
   color: #777;
   text-align: center;
   opacity: 0;
@@ -236,8 +236,7 @@ h2 {
 .pagination .next {
   float: right;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
   position: relative;
   text-align: center;
   font-size: 12px;
@@ -268,7 +267,7 @@ h2 {
 }
 .pagination .next span {
   display: inline-block;
-  line-height: 30px;
+  line-height: 2rem;
   color: #777;
   text-align: center;
   opacity: 0;
@@ -298,9 +297,9 @@ h2 {
   display: inline-block;
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
-  width: 30px;
-  height: 30px;
-  font: 11px/30px "arial";
+  width: 2rem;
+  height: 2rem;
+  font: 11px/2rem "arial";
   color: #666;
   margin: 0 5px;
 }
@@ -309,6 +308,22 @@ h2 {
   color: #fff;
 }
 
+@media (min-width: 640px) {
+  .pagination .next,
+.pagination .prev {
+    width: 3rem;
+    height: 3rem;
+  }
+  .pagination .next span,
+.pagination .prev span {
+    line-height: 3rem;
+  }
+  .pagination .numbers a {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+}
 .table_layout {
   overflow-x: auto;
 }
@@ -576,8 +591,7 @@ header.scroll .logo img {
   font-family: "Audrey", sans-serif;
 }
 .loading div {
-  font-size: 6rem;
-  letter-spacing: 2px;
+  font-size: 3rem;
 }
 .loading span {
   opacity: 0;
@@ -693,6 +707,11 @@ header.scroll .logo img {
 
   header.scroll #gnb ul li a {
     line-height: 80px;
+  }
+
+  .loading div {
+    font-size: 6rem;
+    letter-spacing: 2px;
   }
 }
 /* ---------------------------- footer ---------------------------- */
@@ -1431,7 +1450,6 @@ footer .footerTop p::after {
 }
 .pop .pop_cont {
   width: 100%;
-  height: 50vmin;
 }
 .pop .pop_cont .pic {
   width: 100%;
@@ -1556,6 +1574,69 @@ footer .footerTop p::after {
     grid-template-rows: repeat(4, 30rem);
   }
 }
+.youtube .inner {
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+@media screen and (min-width: 1200px) {
+  .youtube .inner {
+    padding: 0;
+  }
+}
+.youtube .list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.youtube .list ul li {
+  width: 100%;
+  margin-bottom: calc(10% + 3rem);
+}
+.youtube .list ul li a {
+  display: block;
+  position: relative;
+}
+.youtube .list ul li .pic {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 0;
+}
+.youtube .list ul li .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms;
+}
+.youtube .list ul li .cont {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  bottom: -3rem;
+  background-color: #fff;
+  padding: 1rem;
+}
+.youtube .list ul li .cont .title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.youtube .list ul li .cont .owner {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+}
+.youtube .list ul li .cont .desc {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 640px) {
+  .youtube .list ul li {
+    width: 49%;
+    margin-right: 2%;
+  }
+}
 .content {
   width: 100%;
 }
@@ -1572,7 +1653,7 @@ section .inner {
   }
 }
 section h1 {
-  font: 500 4rem/1 "Audrey", sans-serif;
+  font: 500 3rem/1 "Audrey", sans-serif;
   padding: 2em 0 1em;
   text-align: center;
   letter-spacing: 0.2em;
@@ -1592,6 +1673,11 @@ section h1 span::after {
   background: #333;
 }
 
+@media (min-width: 320px) {
+  section h1 {
+    font-size: 3.4rem;
+  }
+}
 @media (min-width: 640px) {
   section h1 {
     font-size: 6rem;

@@ -1,0 +1,53 @@
+.youtube {
+  .inner {
+    @include inner();
+  }
+  .list {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 100%;
+        margin-bottom: calc(10% + 3rem);
+        a {
+          display: block;
+          position: relative;
+        }
+        .pic {
+          width: 100%;
+          height: 100%;
+          @include img();
+        }
+        .cont {
+          width: 80%;
+          position: absolute;
+          left: 0;
+          bottom: -3rem;
+          background-color: #fff;
+          padding: 1rem;
+          .title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: .5em;
+          }
+          .owner {
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+          }
+          .desc {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .youtube .list ul {
+    li {
+      width: 49%;
+      margin-right: 2%;
+    }
+  }
+}
