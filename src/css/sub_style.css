@@ -1807,7 +1807,7 @@ footer .footerTop p::after {
 
 @media (min-width: 640px) {
   .location .btn_company li::before {
-    left: -10%;
+    left: 10%;
   }
   .location .btn_company li a {
     font-size: 1.8rem;
@@ -1828,10 +1828,25 @@ footer .footerTop p::after {
     flex-direction: column;
     justify-content: flex-end;
     position: absolute;
-    bottom: -50%;
+    bottom: -23rem;
     left: 2em;
+    z-index: 1;
     padding: 2em;
-    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.6);
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+  }
+  .location .map_cont .info::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 23rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #eee;
+    opacity: 0.8;
   }
   .location .send_mail {
     display: flex;
