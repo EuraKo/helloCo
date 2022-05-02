@@ -176,6 +176,9 @@ section h1 {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center;
+        a {
+          display: block;
+        }
         @for $i from 1 through 3 {
           &:nth-of-type(#{$i}) {
             transition-delay: 300 * $i + ms;
@@ -342,6 +345,7 @@ section h1 {
         box-sizing: border-box;
         border: 1px solid transparent;
         transition: .5s;
+        cursor: default;
         &::hover {
           border-color: $fontColor;
         }
@@ -405,14 +409,23 @@ section h1 {
   background-color: $bgGary;
   .inner {
     @include inner;
+    background: url(../img/bg-2.jpg) no-repeat center/cover;
+    padding: 3rem 2rem;
+    position: relative;
   }
-  figure {
-    max-width: 1000px;
-    margin: 0 auto;
-    img {
-      width: 100%;
-      object-fit: cover;
+  h1 {
+    font: bold 3rem/1 $fontPoint;
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    &::after {
+      display: none;
     }
+  }
+  p {
+    background: #f5f0e2;
+    padding: 3em 1em 1em;
+    font-family: $fontPoint-2;
   }
 }
 
@@ -524,7 +537,7 @@ section h1 {
       p {
         font-family: $fontPoint-2;
         line-height: 1.5;
-        margin-bottom: 1em;
+        margin-bottom: 0;
       }
     }
   }
@@ -651,8 +664,10 @@ section h1 {
     margin-bottom: 10px;
   }
   .subBtn {
+    font-size: 1.6rem;
     width: 100%;
     height: 37px;
+    display: block;
     background: $colorBk;
     line-height: 37px;
     color: #fff;
@@ -714,6 +729,19 @@ section h1 {
           }
         }
       }
+    }
+  }
+  .slogan {
+    .inner {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+    h1 {
+      font-size: 5rem;
+      top: 4rem;
+    }
+    p {
+      font-size: 1.6rem;
     }
   }
   #weeks,
@@ -935,6 +963,20 @@ section h1 {
         transform: translateY(0);
         opacity: 1;
       }
+    }
+  }
+  .slogan {
+    .inner {
+      padding: 7rem;
+    }
+    h1 {
+      font-size: 7rem;
+      font-weight: normal;
+      left: 7rem;
+      top: 3.5rem;
+    }
+    p {
+      font-size: 2rem;
     }
   }
   // 스크롤 효과 

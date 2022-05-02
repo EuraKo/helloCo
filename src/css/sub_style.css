@@ -144,8 +144,10 @@ body {
 
 /* 스크롤 감추기 */
 .scroll_hidden {
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 /* 
@@ -385,6 +387,8 @@ table tbody tr td a {
   z-index: 30;
   background: rgba(255, 255, 255, 0.9);
   padding: 6rem 3rem 3rem;
+  transform: translateX(100%);
+  transition: transform 500ms;
 }
 .pop .inner {
   width: 1180px;
@@ -496,10 +500,9 @@ table tbody tr td a {
     top: 0;
     left: 0;
     padding: 2em;
-    background-image: linear-gradient(to bottom, #333, transparent);
   }
   .pop .pop_cont .cont .owner {
-    color: #fff;
+    color: #333;
   }
   .pop .pop_cont .title {
     font-size: 3rem;
@@ -509,7 +512,7 @@ table tbody tr td a {
     padding-left: 1rem;
     border-top: 0;
     border-left: 0.5rem solid #dfb15b;
-    color: #fff;
+    color: #333;
   }
 }
 input,
@@ -1765,14 +1768,14 @@ footer .footerTop p::after {
 }
 .location .map_cont .map {
   width: 100%;
-  height: 250px;
+  height: 60vw;
   background: #eee;
   margin-bottom: 2rem;
 }
 .location .map_cont .info h2 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
 }
 .location .map_cont .info dt {
   font-size: 1.6rem;
@@ -1781,6 +1784,9 @@ footer .footerTop p::after {
 .location .map_cont .info dd {
   font-size: 1.2rem;
   margin-bottom: 2em;
+}
+.location .btn_submit {
+  max-width: 10rem;
 }
 
 .send_mail {
@@ -1791,6 +1797,8 @@ footer .footerTop p::after {
   position: relative;
 }
 .send_mail legend {
+  width: 80%;
+  max-width: 186px;
   font-size: 2rem;
   position: absolute;
   left: 50%;
@@ -1803,6 +1811,20 @@ footer .footerTop p::after {
 .send_mail fieldset {
   padding: 3rem 2rem 2rem;
   border: 1px solid #f6ebe4;
+}
+
+.alert {
+  font-size: 1.6rem;
+  position: fixed;
+  bottom: 0.5em;
+  right: -100%;
+  background: #dfb15b;
+  padding: 1em;
+  color: #fff;
+  transition: 500ms;
+}
+.alert.on {
+  right: 0.5em;
 }
 
 @media (min-width: 640px) {
@@ -1818,12 +1840,12 @@ footer .footerTop p::after {
     font-size: 2rem;
   }
   .location .map_cont .map {
-    height: 50vw;
-    max-height: 680px;
+    height: 30vw;
+    max-height: 440px;
   }
   .location .map_cont .info {
     width: 30rem;
-    height: 40rem;
+    height: 42rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1847,6 +1869,12 @@ footer .footerTop p::after {
     z-index: -1;
     background-color: #eee;
     opacity: 0.8;
+  }
+  .location .map_cont .info dd {
+    font-size: 1.4rem;
+  }
+  .location .map_cont .info dd:last-of-type {
+    margin-bottom: 0;
   }
   .location .send_mail {
     display: flex;
@@ -1910,6 +1938,7 @@ section h1 span::after {
 @media (min-width: 1200px) {
   section h1 {
     font-size: 8rem;
+    padding-top: 1.5em;
   }
 }
 

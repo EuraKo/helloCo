@@ -36,6 +36,12 @@ class Banner {
     this.next.addEventListener('click', e => {
       this.nextBtn();
     })
+    for (let item of this.$bannerItem) {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+      })
+
+    }
   }
   prevBtn() {
     if (this.enabledClick) {

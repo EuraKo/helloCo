@@ -5,6 +5,10 @@ function showPop(elem, htmls) {
   pop.classList.add('pop_' + elem);
   pop.innerHTML = htmls;
   body.append(pop);
+  setTimeout(() => {
+    pop.style.transform = 'translateX(0)';
+
+  }, 100)
 }
 
 function hidePop(e) {
@@ -12,10 +16,13 @@ function hidePop(e) {
   if (pop !== null) {
     let close = pop.querySelector('.pop_cancle');
     let closeSpan = close.querySelector('span');
-    // 좀 더 간결한 코드?
-    if (e.target === close || e.target === closeSpan) {
-      pop.remove();
-      body.classList.remove('scroll_hidden');
+    if (e.target.closest('.pop_cancle')) {
+      pop.style.transform = 'translateX(100%)';
+      setTimeout(() => {
+        pop.remove();
+        body.classList.remove('scroll_hidden');
+      }, 500)
     }
   }
+  return;
 }

@@ -144,8 +144,10 @@ body {
 
 /* 스크롤 감추기 */
 .scroll_hidden {
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 /* 
@@ -933,6 +935,10 @@ section h1:after {
   background-size: 100% 100%;
   background-position: center;
 }
+#popular .inner .wrap article a,
+#favorite .inner .wrap article a {
+  display: block;
+}
 #popular .inner .wrap article:nth-of-type(1),
 #favorite .inner .wrap article:nth-of-type(1) {
   transition-delay: 300ms;
@@ -1128,6 +1134,7 @@ section h1:after {
   box-sizing: border-box;
   border: 1px solid transparent;
   transition: 0.5s;
+  cursor: default;
 }
 .banner .banner_inner .banner_cont a::hover {
   border-color: #dfb15b;
@@ -1188,19 +1195,28 @@ section h1:after {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 3rem;
+  background: url(../img/bg-2.jpg) no-repeat center/cover;
+  padding: 3rem 2rem;
+  position: relative;
 }
 @media screen and (min-width: 1200px) {
   .slogan .inner {
     padding: 0;
   }
 }
-.slogan figure {
-  max-width: 1000px;
-  margin: 0 auto;
+.slogan h1 {
+  font: bold 3rem/1 "Cardo", sans-serif;
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
 }
-.slogan figure img {
-  width: 100%;
-  object-fit: cover;
+.slogan h1::after {
+  display: none;
+}
+.slogan p {
+  background: #f5f0e2;
+  padding: 3em 1em 1em;
+  font-family: "Audrey", sans-serif;
 }
 
 /* ---------------------------- rolling_banner ---------------------------- */
@@ -1334,7 +1350,7 @@ section h1:after {
 #dessert .inner_box .inner_cont p {
   font-family: "Audrey", sans-serif;
   line-height: 1.5;
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
 
 /* ---------------------------- favorite ---------------------------- */
@@ -1471,8 +1487,10 @@ section h1:after {
   margin-bottom: 10px;
 }
 #book .subBtn {
+  font-size: 1.6rem;
   width: 100%;
   height: 37px;
+  display: block;
   background: #333;
   line-height: 37px;
   color: #fff;
@@ -1531,6 +1549,18 @@ section h1:after {
   #popular .inner .wrap article .cont h2,
 #favorite .inner .wrap article .cont h2 {
     font-size: 2.2rem;
+  }
+
+  .slogan .inner {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  .slogan h1 {
+    font-size: 5rem;
+    top: 4rem;
+  }
+  .slogan p {
+    font-size: 1.6rem;
   }
 
   #weeks .wrap,
@@ -1743,6 +1773,19 @@ section h1:after {
 #favorite.main_scroll_on .inner .wrap article {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .slogan .inner {
+    padding: 7rem;
+  }
+  .slogan h1 {
+    font-size: 7rem;
+    font-weight: normal;
+    left: 7rem;
+    top: 3.5rem;
+  }
+  .slogan p {
+    font-size: 2rem;
   }
 
   #weeks .cardImgBox {
