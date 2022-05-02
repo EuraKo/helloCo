@@ -4,4 +4,4 @@
 *.pdf
 *.ai
 node_module/
-C/tmpnodejsnpm-cache/
+C:tmpnodejsnpm-cache/
