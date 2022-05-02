@@ -1,0 +1,7 @@
+# : comments
+
+*.vscode
+*.pdf
+*.ai
+node_module/
+C/tmpnodejsnpm-cache/
